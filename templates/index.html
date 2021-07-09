@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <!-- jQuery CDN -->
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"
+></script>
+    <!-- Bootstrap 5 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"
+    <!-- SocketIO CDN -->
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"
+    integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ=="
+    crossorigin="anonymous">
+    </script>
+    <!-- script link -->
+    <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
+    <!-- stylesheet link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+{% endblock %}
+
+{% block body %}
+<div class="bg-fade vh-half" style="background: #1EAE98"></div>
+<header class="vw-100 vh-18 minh-183 d-flex justify-content-center align-items-center">
+    <h1 class="fas fa-car-side fa-3x animation slide-out-right">Andrew Matt</h1><h2>Portfolio</h2>
+</header>
+<nav class="navbar navbar-expand-lg navbar-dark dark">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" href="#">Quickchat!</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="bg-fade vh-half" style="background: #1EAE98"></div>
+
+<main>
+    <!-- Section for jumbotron -->
+    <section class="vw-100 h-auto minh-1000 d-flex justify-content-center align-items-center flex-wrap container-fluid bg-gray-fade">
+        <div class="jumbotron" style="opacity: 0.5; height: 800px; width: 800px;">
+          <h1 class="display-4 text-center">Hello!</h1>
+          <p class="lead">My name is Andrew Matt. I am an 18 year old college student majoring in Computer Software Engineering Technology at Thaddeus Stevens College of Technology for my Associates Degree, soon to be going for my Bachelor's degree.
+          </p>
+          <p class="lead"> I have experience working as a technical support consultant/fixing bugs in software with SQL, tutoring students in high school and under in mathematics, and next year I will be working as a tutor for students in my major at Thaddeus Stevens.
+          </p>
+          <hr class="my-4">
+          <p>I love self-studying in my free time, hiking, reading books, and hanging out with friends, with the occasional outdoor activity or video game.
+          </p>
+          <p> Most of my self-studying is me devoting myself to learning a new language, like Korean or German, or learning some new technology skills - network administration, a programming language, framework, or library.
+          </p>
+        </div>
+    </section>
+    <div class="bg-fade vh-half" style="background: #1EAE98"></div>
+    <!-- Section for cards -->
+    <section class="h-auto minh-600 vw-100 dark d-flex justify-content-around align-items-center flex-wrap container-fluid">
+        <div class="card box" style="width: 18rem;">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-center">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary align-self-center">Go somewhere</a>
+          </div>
+        </div>
+       <div class="card box" style="width: 18rem;">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-center">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary align-self-center">Go somewhere</a>
+          </div>
+        </div>
+        <div class="card box" style="width: 18rem;">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-center">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary align-self-center">Go somewhere</a>
+          </div>
+        </div>        
+    </section>
+    <div class="bg-fade vh-half" style="background: #1EAE98"></div>
+    <section class="minh-900 h-auto vw-100 light d-flex justify-content-center align-items-center flex-wrap">
+        <!-- Div to hold carousel -->
+        <div class="d-flex flex-column align-items-center">
+            <h4>Places I wish I were at right now!</h4>
+            <div class="minh-500 tertiary vw-60 minw-500 maxw-900">
+                <!-- Start of carousel -->
+                <div id="carouselExampleControls" class="carousel slide h-100percent w-100percent" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <center> <img src="{{url_for('static', filename='images/Beach.jpg')}}" class="d-block h-500 w-auto" alt="Beach"></center>
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{{url_for('static', filename='images/mountain-lake.jpg')}}" class="d-block h-500" alt="Mountain Lake">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{{url_for('static', filename='images/mountain-lake2.jpg')}}" class="d-block h-500" alt="Second Mountain Lake">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden text-dark">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="visually-hidden text-dark">Next</span>
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  </button>
+                </div>
+                <!-- End of carousel -->
+            </div>
+        </div>
+    </section>
+</main>
+
+<div class="bg-fade vh-half" style="background: #1EAE98"></div>
+<footer class="vh-18 vw-100 d-flex flex-column align-items-center text-white dark" style="height: auto">
+    <div class="d-flex flex-row flex-wrap justify-content-around" style="width: 100vw; margin-bottom: 50px; height: 200px; margin-top: 50px;">
+        <table class="table">
+            <thead><h5>Languages, Frameworks, Libraries in this Portfolio</h5>
+                <tr class="text-center">
+                  <th scope="col">HTML</th>
+                  <th scope="col">CSS</th>
+                  <th scope="col">JavaScript</th>
+                  <th scope="col">Python</th>
+                  <th scope="col">PostgreSQL</th>
+                </tr>
+                <tbody>
+                <tr class="text-center">
+                    <td scope="row"></td>
+                    <td>Flask</td>
+                    <td>Flask-Social</td>
+                    <td>Flask-SocketIO</td>
+                    <td></td>
+                </tr>
+                <tr class="text-center">
+                    <td scope="row"></td>
+                    <td>Bootstrap</td>
+                    <td>jQuery</td>
+                    <td>Dart Sass</td>
+                    <td></td>
+                </tr>
+                </tbody>
+          </thead>
+        </table>
+    </div>
+    <h5 style="margin-bottom: 50px;">Contact me at: <a href="mailto:andrewm1246@gmail.com">andrewm1246@gmail.com</a></h5>
+</footer>
+{% endblock %}
