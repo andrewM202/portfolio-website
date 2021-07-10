@@ -263,5 +263,14 @@ header h1 {
     margin: 0;
   }
 }
+@media (max-width: 400px) {
+  .jumbotron {
+    height: 1100px;
+  }
+
+  table {
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */
