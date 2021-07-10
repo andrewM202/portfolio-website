@@ -75,9 +75,6 @@ header {
     width: 800px;
 }
 
-
-.nav-link:hover { text-decoration: underline; color: green;}
-
 .box {
     background: white;
     height: 300px;
@@ -97,10 +94,6 @@ header {
     margin: 0;
 }
 
-.underline {
-    
-}
-
 .nav-item {
     font-size: 1.3rem;
     margin-right: 30px;
@@ -110,7 +103,7 @@ header {
     font-size: 1.5rem;
 }
 
-h1 {
+header h1 {
     font-size: 3.0rem;
     margin-right: 25px;
 }

@@ -1,9 +1,10 @@
 $(document).ready(function () {
     // Animation for header
-    if (jQuery(window).width >= 500) {
-        $("header h1").hide().fadeIn(1500).animate({"margin-right": '+=50'}, 2500)
+    // If window is bigger than 500px, do margin animation, else only fade animation
+    if (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) >  500) {
+        $("header h1").hide().fadeIn(1500).animate({"margin-right": '+=50'}, 2500);
     }
     else {
-        $("header h1").hide().fadeIn(1500)
+        $("header h1").hide().fadeIn(1500);
     }
 });
