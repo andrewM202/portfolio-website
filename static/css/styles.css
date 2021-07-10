@@ -257,7 +257,7 @@ a.navbar-brand:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   .slideshow {
     width: 100vw;
     min-width: 0;
@@ -281,6 +281,11 @@ a.navbar-brand:hover {
 .carousel-control-next span.text-center {
     font-size: 1.5rem;
     margin: 0 25px;
+  }
+
+  .carousel-control-next,
+.carousel-control-prev {
+    background: #FFF;
   }
 }
 @media (max-width: 400px) {
