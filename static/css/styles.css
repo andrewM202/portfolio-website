@@ -248,6 +248,7 @@ header h1 {
   width: 50%;
   height: 100px;
   margin-top: 400px;
+  border-radius: 10px;
 }
 
 a.nav-link:hover,
