@@ -7,4 +7,12 @@ $(document).ready(function () {
     else {
         $("header h1").hide().fadeIn(1500);
     }
+
+    // Make buttons fill in white on mobile
+    $(".carousel-control-next").click(function() {
+        $(".carousel-control-next").css('background', '#FFF'); // White
+    });
+    $(".carousel-control-prev").click(function() {
+        $(".carousel-control-next").css('background', '#FFF'); // White
+    });
 });
