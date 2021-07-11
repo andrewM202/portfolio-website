@@ -42,6 +42,10 @@
   min-height: 900px;
 }
 
+.minh-750 {
+  min-height: 750px;
+}
+
 .minh-600 {
   min-height: 600px;
 }
@@ -150,6 +154,10 @@
   width: 100vw;
 }
 
+.vw-85 {
+  width: 85vw;
+}
+
 .vw-60 {
   width: 60vw;
 }
@@ -174,12 +182,32 @@
   width: 3vw;
 }
 
+.bd-black-top {
+  border-top: 3px solid #212529;
+}
+
+.blue-bd-top {
+  border-top: 5px solid #1EAE98;
+}
+
+.blue-bd-bottom {
+  border-bottom: 5px solid #1EAE98;
+}
+
 body {
   background: #212529;
 }
 
+address {
+  margin: 0;
+}
+
 header {
   background: white;
+}
+
+address p {
+  margin: 20px 50px;
 }
 
 .jumbotron {
@@ -221,18 +249,12 @@ header h1 {
   margin-right: 25px;
 }
 
-.bg-fade {
-  background: linear-gradient(90deg, #00008B, #0000CD, blue, #FF7600 15%, purple 35%, #87CEEB);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-.bg-gray-fade {
+.bg-linear-fade {
   background: linear-gradient(180deg, #4CA1A3, #C8C2BC, #D6D2C4, #4CA1A3);
 }
 
-.bg-gray-fade-horizontal {
-  background: linear-gradient(90deg, #4CA1A3 0%, white 7%, white 93%, #4CA1A3 100%);
+.bg-radial-fade {
+  background: radial-gradient(white 85%, #4CA1A3);
 }
 
 .carousel-control-next-icon {
@@ -282,12 +304,21 @@ header h1 {
   height: 58%;
 }
 
+.form-container div {
+  height: 35px;
+  width: 50%;
+}
+
+address form > div {
+  margin-top: 25px;
+}
+
 a.nav-link:hover,
 a.navbar-brand:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 500px) {
   .slideshow {
     width: 100vw;
     min-width: 0;
@@ -317,6 +348,15 @@ a.navbar-brand:hover {
   .carousel-control-next,
 .carousel-control-prev {
     background: #FFF;
+  }
+
+  address .form-container {
+    flex-direction: column;
+  }
+
+  .form-container > div {
+    width: 100%;
+    margin-top: 25px;
   }
 }
 @media (max-width: 400px) {
