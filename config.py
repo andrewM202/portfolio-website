@@ -13,10 +13,16 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     # SEND_FILE_MAX_AGE_DEFAULT makes it so the browser doesn't store any of the CSS or HTML in a cache. It makes for easier development
     SEND_FILE_MAX_AGE_DEFAULT = 0
+    # EMAIL SETTINGs
+    MAIL_SERVER='smtp.gmail.com'
+    MAIL_PORT=465
+    MAIL_USE_SSL=True
 
 
 class ProductionConfig(Config):
     DEBUG = False
+    # Allow flask-mail
+    MAIL_SUPPRESS_SEND = False
 
 
 class StagingConfig(Config):
@@ -27,6 +33,8 @@ class StagingConfig(Config):
 class DevelopmentConfig(Config):
     DEVELOPMENT = True
     DEBUG = True
+    # Suppress Flask Mail
+    MAIL_SUPPRESS_SEND = False
 
 
 class TestingConfig(Config):

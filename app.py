@@ -8,18 +8,6 @@ from flask_mail import Mail
 app = Flask(__name__)
 app.config.from_object('config.DevelopmentConfig')
 
-app.config.update(
-    DEBUG=True,
-    #EMAIL SETTINGS
-    MAIL_SERVER='smtp.gmail.com',
-    MAIL_PORT=465,
-    MAIL_USE_SSL=True,
-    #MAIL_USERNAME = 'hilfus20@gmail.com',
-    #MAIL_PASSWORD = 'gargFLOP'
-    MAIL_USERNAME = 'guardosilo@gmail.com',
-    MAIL_PASSWORD = 'Discovery2012'
-)
-
 # Create a Flask-Mail instance
 mail = Mail(app)
 
