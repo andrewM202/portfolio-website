@@ -158,8 +158,8 @@
         {% if mail_error %}
             <p>Error sending email: {{ mail_error }}</p>
         {% endif %}
-        {% if not mail_error %}
-            <p>Data will not be kept nor used for anything except sending this email</p>
+        {% if mail_success %}
+            <p>{{ mail_success }}</p>
         {% endif %}
         <form class="d-flex flex-column" action=/mail/ method="POST">
             <div class="d-flex vw-85 form-container">
@@ -167,7 +167,7 @@
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address" name="sent-email">
                 </div>
                 <div class="input-group">
-                    <input type="password" class="form-control" placeholder="Email Password" name="sent-password">
+                    <input type="text" class="form-control" placeholder="Name" name="sent-name">
                 </div>
             </div>
             <div class="input-group">

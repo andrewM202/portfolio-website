@@ -14,10 +14,11 @@ class Config(object):
     # SEND_FILE_MAX_AGE_DEFAULT makes it so the browser doesn't store any of the CSS or HTML in a cache. It makes for easier development
     SEND_FILE_MAX_AGE_DEFAULT = 0
     # EMAIL SETTINGs
-    MAIL_SERVER='smtp.gmail.com'
-    MAIL_PORT=465
-    MAIL_USE_SSL=True
-
+    MAIL_SERVER = 'smtp.gmail.com'
+    MAIL_PORT = 465
+    MAIL_USE_SSL = True
+    MAIL_USERNAME = os.environ['MAIL_USERNAME']
+    MAIL_PASSWORD = os.environ['MAIL_PASSWORD']
 
 class ProductionConfig(Config):
     DEBUG = False

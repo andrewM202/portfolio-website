@@ -1,6 +1,6 @@
 from flask import Blueprint, request, Flask, render_template, redirect 
 from flask_mail import Mail, Message
-from app import mail, app
+from app import mail
 import flask
 
 bp = Blueprint("mail", __name__)
@@ -11,23 +11,24 @@ def send_mail():
     try: 
         if request.method == "POST":
             email = request.form['sent-email']
-            password = request.form['sent-password']
+            name = request.form['sent-name']
             subject = request.form['sent-subject']
             message = request.form['sent-message']
 
-            app.config.update (
-                MAIL_USERNAME = email,
-                MAIL_PASSWORD = password
-            )
+            #from app import app, Config
+            from app import app
+
+            print(app.config)
 
             msg = Message(
                 subject,
                 sender=email,
                 recipients=["hilfus20@gmail.com"])
-            msg.body = message
+            msg.body = "Message from " + name + ", email: " + email + "\n\n" + message
             mail.send(msg)
-            return "Sent mail!"
+            return render_template('index.html', mail_success="Email Successfully Sent!")
     except Exception as e:
-        return render_template('index.html', mail_error = (str(e)))
+        #print(e)
+        return render_template('index.html', mail_error=(str(e)))
 
 
