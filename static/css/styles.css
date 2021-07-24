@@ -444,6 +444,22 @@ footer h5 {
     width: 100%;
     margin-top: 25px;
   }
+
+  footer ul {
+    text-align: center;
+    width: 100vw;
+    max-height: none;
+    align-items: center;
+  }
+
+  footer ul li {
+    margin-left: 0;
+    margin-right: 50px;
+  }
+
+  footer h5 {
+    margin-top: 600px;
+  }
 }
 @media (max-width: 400px) {
   .jumbotron {
