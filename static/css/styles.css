@@ -306,6 +306,55 @@ a.navbar-brand:hover {
   text-decoration: underline;
 }
 
+footer > div {
+  max-width: 88vw;
+  margin: 0 6vw;
+}
+
+footer ul {
+  width: 300px;
+  min-height: 100%;
+  height: auto;
+  max-height: 250px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: 100px;
+  margin-right: 250px;
+}
+
+footer ul li {
+  margin-top: 25px;
+  font-size: 1.3rem;
+  min-width: 100px;
+  margin-right: 100px;
+  list-style-type: none;
+}
+
+footer h4 {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  min-width: 150px;
+  max-width: 200px;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 3px solid gray;
+}
+
+footer a:hover {
+  color: gray;
+}
+
+footer h5 {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
 @media (max-width: 1400px) {
   .jumbo-container {
     flex-direction: column;
@@ -321,11 +370,38 @@ a.navbar-brand:hover {
     width: 65vw;
     margin-left: 0;
   }
-}
-@media (max-width: 1400px) {
+
   .jumbotron,
 .mini-jumbotron {
     width: 85vw;
+  }
+}
+@media (max-width: 1000px) {
+  footer h4 {
+    min-width: 60vw;
+  }
+
+  footer ul {
+    height: auto;
+    min-height: 100%;
+    max-height: 300px;
+    width: 80vw;
+    min-width: 0;
+    margin-right: 0;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  footer h5 {
+    margin-top: 350px;
+    margin-bottom: 100px;
+  }
+
+  footer {
+    height: auto;
   }
 }
 @media (max-width: 500px) {
@@ -372,10 +448,6 @@ a.navbar-brand:hover {
 @media (max-width: 400px) {
   .jumbotron {
     height: 1200px;
-  }
-
-  table {
-    display: none;
   }
 }
 
