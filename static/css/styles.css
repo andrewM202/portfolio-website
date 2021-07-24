@@ -472,6 +472,10 @@ footer h5 {
   footer h5 {
     margin-top: 600px;
   }
+
+  footer h5 {
+    text-align: center;
+  }
 }
 @media (max-width: 400px) {
   .jumbotron {
