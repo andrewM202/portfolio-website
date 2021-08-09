@@ -1,0 +1,7 @@
+- Development Goals
+    - Use a MongoDB Database 
+        - (https://pythonbasics.org/flask-mongodb/)
+        - (https://www.tutorialspoint.com/mongodb/mongodb_overview.htm)
+    - Switch the flask-mail portion to use Websocket instead of HTTP
+    - Added a UI to add posts for the blog section 
+        - Possibly a feature to upload and display PDF files? 
