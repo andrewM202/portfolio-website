@@ -4,9 +4,19 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_socketio import SocketIO
 from flask_migrate import Migrate
 from flask_mail import Mail
+from models import db, Test
 
 app = Flask(__name__)
 app.config.from_object('config.DevelopmentConfig')
+
+# Configure MongoDB Database
+app.config['MONGODB_SETTINGS'] = {
+    'db': 'portfolio_db',
+    'host': 'localhost',
+    'port': 27017
+}
+
+db.init_app(app)
 
 # Create a Flask-Mail instance
 mail = Mail(app)
