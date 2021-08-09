@@ -5,9 +5,13 @@ from flask_socketio import SocketIO
 from flask_migrate import Migrate
 from flask_mail import Mail
 from models import db, Test
+from flask_sitemap import Sitemap
 
 app = Flask(__name__)
 app.config.from_object('config.DevelopmentConfig')
+
+# Initialize XML sitemap 
+ext = Sitemap(app=app)
 
 # Configure MongoDB Database
 app.config['MONGODB_SETTINGS'] = {

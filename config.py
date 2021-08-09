@@ -19,6 +19,7 @@ class Config(object):
     MAIL_USE_SSL = True
     MAIL_USERNAME = os.environ['MAIL_USERNAME']
     MAIL_PASSWORD = os.environ['MAIL_PASSWORD']
+    SITEMAP_INCLUDE_RULES_WITHOUT_PARAMS=True # Config for XML sitemap
 
 class ProductionConfig(Config):
     DEBUG = False
