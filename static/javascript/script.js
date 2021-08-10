@@ -9,4 +9,6 @@ $(document).ready(function () {
     }
     $("header h1.fade-animation").hide().fadeIn(1500);
 
+    $(".card").addClass("hvr-float")
+
 });
