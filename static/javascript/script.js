@@ -10,5 +10,7 @@ $(document).ready(function () {
     $("header h1.fade-animation").hide().fadeIn(1500);
 
     $(".card").addClass("hvr-float")
+    $(".jumbotron").addClass("animate__animated animate__fadeInLeft")
+    $(".mini-jumbotron").addClass("animate__animated animate__fadeInRight")
 
 });

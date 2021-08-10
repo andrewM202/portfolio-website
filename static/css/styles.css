@@ -368,6 +368,12 @@ footer h5 {
   margin-top: 50px;
 }
 
+/* Animation */
+.animate__animated.animate__fadeInLeft,
+.animate__animated.animate__fadeInRight {
+  --animate-duration: 4s;
+}
+
 @media (max-width: 1400px) {
   .jumbo-container {
     flex-direction: column;
