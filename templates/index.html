@@ -43,16 +43,11 @@
         <div>
             <p>Feel free to drop a quick message!</p>
         </div>
-        <div class="dropdown mt-3">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-            Dropdown button
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </div>
+        <form action=/create_message method="POST">
+          <input type="text" name="user-message" placeholder="Your Message...">
+          <input type="text" name="user-name" placeholder="Your Name...">
+          <input class="btn btn-secondary" type="submit" id="dropdownMenuButton">
+        </form>
       </div>
     </div>
     <!-- End off canvas -->

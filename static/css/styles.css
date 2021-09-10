@@ -213,9 +213,67 @@ address {
 header {
   background: white;
 }
+header h1 {
+  font-size: 3rem;
+  margin-right: 25px;
+}
 
-address p {
+main address p {
   margin: 20px 50px;
+}
+main .box {
+  background: white;
+  height: 350px;
+  min-width: 350px;
+  margin: 25px 35px;
+}
+main .box .card-text {
+  height: 58%;
+  font-size: 1.2rem;
+}
+main .box .card-title {
+  font-size: 1.5rem;
+}
+
+footer > div {
+  max-width: 88vw;
+  margin: 0 6vw;
+}
+footer ul {
+  width: 300px;
+  min-height: 100%;
+  height: auto;
+  max-height: 250px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: 100px;
+  margin-right: 250px;
+}
+footer ul li {
+  margin-top: 25px;
+  font-size: 1.3rem;
+  min-width: 100px;
+  margin-right: 100px;
+  list-style-type: none;
+}
+footer h4 {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  max-width: 100px;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 3px solid gray;
+}
+footer a:hover {
+  color: gray;
+}
+footer h5 {
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .jumbotron {
@@ -240,13 +298,6 @@ address p {
   margin-top: 50px;
 }
 
-.box {
-  background: white;
-  height: 300px;
-  width: 300px;
-  margin: 25px 15px;
-}
-
 .grey {
   background: gray;
 }
@@ -264,26 +315,18 @@ nav {
   top: 0;
   z-index: 2;
 }
-
-.nav-item {
+nav .nav-item {
   font-size: 1.3rem;
-  margin-right: 30px;
+  margin-right: 300px;
 }
-
-.nav-item-sec {
+nav .nav-item-sec {
   font-size: 1.3rem;
   margin: 0 75px;
 }
-
-.navbar-brand {
+nav .navbar-brand {
   font-size: 1.5rem;
   background: none;
   border: none;
-}
-
-header h1 {
-  font-size: 3rem;
-  margin-right: 25px;
 }
 
 .bg-linear-fade {
@@ -303,10 +346,6 @@ header h1 {
   cursor: pointer;
 }
 
-.card-text {
-  height: 58%;
-}
-
 .form-container div {
   height: 35px;
   width: 50%;
@@ -319,53 +358,6 @@ address form > div {
 a.nav-link:hover,
 a.navbar-brand:hover {
   text-decoration: underline;
-}
-
-footer > div {
-  max-width: 88vw;
-  margin: 0 6vw;
-}
-
-footer ul {
-  width: 300px;
-  min-height: 100%;
-  height: auto;
-  max-height: 250px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin-left: 100px;
-  margin-right: 250px;
-}
-
-footer ul li {
-  margin-top: 25px;
-  font-size: 1.3rem;
-  min-width: 100px;
-  margin-right: 100px;
-  list-style-type: none;
-}
-
-footer h4 {
-  min-height: 100%;
-  display: flex;
-  align-items: center;
-  max-width: 100px;
-}
-
-footer a {
-  color: white;
-  text-decoration: none;
-  border-bottom: 3px solid gray;
-}
-
-footer a:hover {
-  color: gray;
-}
-
-footer h5 {
-  margin-bottom: 50px;
-  margin-top: 50px;
 }
 
 /* Animation */
@@ -399,7 +391,6 @@ footer h5 {
   footer h4 {
     min-width: 60vw;
   }
-
   footer ul {
     height: auto;
     max-height: 350px;
@@ -411,15 +402,14 @@ footer h5 {
     align-items: center;
     flex-wrap: wrap;
   }
-
   footer h5 {
     margin-top: 375px;
     margin-bottom: 100px;
   }
 }
-@media (max-width: 892px) {
+@media (max-width: 991px) {
   .nav-item-sec {
-    margin: 0;
+    margin: 0 0 !important;
   }
 }
 @media (max-width: 500px) {
@@ -443,7 +433,6 @@ footer h5 {
     flex-direction: column;
     text-align: center;
   }
-
   header h1 {
     margin: 0;
   }
@@ -469,16 +458,13 @@ footer h5 {
     max-height: none;
     align-items: center;
   }
-
   footer ul li {
     margin-left: 0;
     margin-right: 20px;
   }
-
   footer h5 {
     margin-top: 700px;
   }
-
   footer h4 {
     text-align: center;
   }
