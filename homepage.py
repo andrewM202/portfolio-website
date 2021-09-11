@@ -9,10 +9,13 @@ bp = Blueprint("homepage", __name__)
 @bp.route("/")
 def query_all():
     """ Return all records for homepage """
-    messages = Quickchat.objects()
-    length = len(messages)
-    # return messages
-    return render_template("index.html", messages=messages, length=length)
+    if len(Quickchat.objects()) > 0:
+        messages = Quickchat.objects()
+        length = len(messages)
+        # return messages
+        return render_template("index.html", messages=messages, length=length)
+    else:
+        return render_template("index.html")
 
 @bp.route("/create_message", methods=["POST", "GET"])
 def create_message():

@@ -23,9 +23,6 @@
     <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
     <!-- stylesheet link -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <script>
-      console.log("{{ messages[0].id }}")
-    </script>
 {% endblock %}
 
 {% block body %}
@@ -44,11 +41,13 @@
       <div class="offcanvas-body">
         <h3>Feel free to drop a quick message!</h3>
         <div>
-          {% for i in range(length) %}
-          <div class="message" id="{{ messages[i].id }}">
-            <h5>{{ messages[i].name }}</h5><p>{{ messages[i].message }}</p>
-          </div>
-          {% endfor %}
+          {% if messages is defined and length is defined %}
+            {% for i in range(length) %}
+            <div class="message" id="{{ messages[i].id }}">
+              <h5>{{ messages[i].name }}</h5><p>{{ messages[i].message }}</p>
+            </div>
+            {% endfor %}
+          {% endif %}
         </div>
         <div class="form-holder">
           <form action=/create_message method="POST">

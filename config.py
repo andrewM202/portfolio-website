@@ -22,7 +22,8 @@ class Config(object):
     SITEMAP_INCLUDE_RULES_WITHOUT_PARAMS=True # Config for XML sitemap
     # Mongoengine
     MONGODB_DB = 'portfolio-website'
-    MONGODB_HOST = 'mongodb://localhost/portfolio-website'
+    # MONGODB_HOST = 'mongodb://localhost/portfolio-website'
+    MONGODB_HOST = os.environ['MONGODB_HOST']
     MONGODB_PORT = 27017
     # file upload 
     UPLOAD_FOLDER = './static/resume/'
