@@ -199,7 +199,7 @@ nav {
     z-index: 2;
     .nav-item {
         font-size: 1.3rem;
-        margin-right: 300px;
+        margin-right: 30px;
     }
     .nav-item-sec {
         font-size: 1.3rem;
@@ -209,6 +209,68 @@ nav {
         font-size: 1.5rem;
         background: none;
         border: none;
+    }
+    .offcanvas-body { 
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        > h3 {
+            text-align: center;
+            width: 100%;
+            font-size: 1.3rem;
+            padding: 10px 0;
+            // border-bottom: 1px solid black;
+            border-radius: 5px;
+            background-color: #D4ECDD;
+            border: 1px solid #F3F1F5;
+            // border: 1px solid #4CA1A3;
+        }
+        div {
+            height: 70%;
+            width: 100%;
+            overflow-y: auto;
+            .message { 
+                border: 3px solid #F3F1F5;
+                width: 100%;
+                min-height: 35px;
+                height: auto;
+                border-radius: 8px;
+                margin: 15px 0;
+                word-break: break-word;
+                background-color: #D7E9F7;
+                p {
+                    padding: 0 10px 0px 10px;
+                }
+                h5 {  
+                    padding: 10px 0 0 10px;
+                }
+            }
+        }
+        div.form-holder {
+            height: 24%;
+            min-height: 225px;
+            align-self: flex-end;
+            border-top: 1px solid #5c636a;
+            padding-top: 10px;
+            form {
+                height: 100%;
+                input {
+                    width: 95%;
+                    margin: 10px 15px;
+                    padding: 5px;
+                }
+                textarea {
+                    width: 95%;
+                    margin: 10px 15px;
+                    min-height: 25px;
+                    height: auto;
+                    resize: none;
+                    padding: 5px;
+                }
+            }
+        }
     }
 }
 

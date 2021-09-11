@@ -37,8 +37,8 @@ app.register_blueprint(resume.bp)
 import mail
 app.register_blueprint(mail.bp)
 
-import quickchat
-app.register_blueprint(quickchat.bp)
+import login 
+app.register_blueprint(login.bp)
 
 if __name__ == "__main__":
     socketio.run(app)

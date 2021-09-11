@@ -24,6 +24,9 @@ class Config(object):
     MONGODB_DB = 'portfolio-website'
     MONGODB_HOST = 'mongodb://localhost/portfolio-website'
     MONGODB_PORT = 27017
+    # file upload 
+    UPLOAD_FOLDER = './static/resume/'
+    ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 
 class ProductionConfig(Config):

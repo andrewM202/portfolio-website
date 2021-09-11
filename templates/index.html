@@ -23,7 +23,9 @@
     <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
     <!-- stylesheet link -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-
+    <script>
+      console.log("{{ messages[0].id }}")
+    </script>
 {% endblock %}
 
 {% block body %}
@@ -40,14 +42,21 @@
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
+        <h3>Feel free to drop a quick message!</h3>
         <div>
-            <p>Feel free to drop a quick message!</p>
+          {% for i in range(length) %}
+          <div class="message" id="{{ messages[i].id }}">
+            <h5>{{ messages[i].name }}</h5><p>{{ messages[i].message }}</p>
+          </div>
+          {% endfor %}
         </div>
-        <form action=/create_message method="POST">
-          <input type="text" name="user-message" placeholder="Your Message...">
-          <input type="text" name="user-name" placeholder="Your Name...">
-          <input class="btn btn-secondary" type="submit" id="dropdownMenuButton">
-        </form>
+        <div class="form-holder">
+          <form action=/create_message method="POST">
+            <textarea type="text" name="user-message" placeholder="Your Message..."></textarea>
+            <input type="text" name="user-name" placeholder="Your Name...">
+            <input class="btn btn-secondary" type="submit" id="dropdownMenuButton">
+          </form>
+        </div>
       </div>
     </div>
     <!-- End off canvas -->
