@@ -232,6 +232,36 @@ main section #adobe-dc-view {
   max-height: 100vh;
   margin: 50px 0;
 }
+main section #resume-upload label {
+  position: relative;
+  cursor: pointer;
+  border: 1px solid black;
+  background-color: #3ba5a7;
+  height: 75px;
+  width: 500px;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+}
+main section #resume-upload label input[type=file] {
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 100px;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+}
+main section #resume-upload input[type=submit] {
+  background-color: #3ba5a7;
+  margin: 50px 0;
+  width: 500px;
+  max-width: 100vw;
+  height: 75px;
+  font-size: 1.3rem;
+}
 main address p {
   margin: 20px 50px;
 }

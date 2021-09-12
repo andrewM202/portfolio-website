@@ -37,10 +37,13 @@
   </div>
 </nav>
 <main>
-    <section class="vw-100 h-auto minh-1000 d-flex justify-content-center align-items-center flex-wrap container-fluid bg-linear-fade jumbo-container">
-      <form action = "/resume-process" method = "POST" enctype = "multipart/form-data">
-         <input type = "file" name = "File" />
-         <input type = "submit" value = "Submit" />
+    <section class="vw-100 h-auto minh-1000 d-flex justify-content-center align-items-center container-fluid bg-linear-fade jumbo-container">
+      <form action = "/resume-process" method = "POST" enctype = "multipart/form-data" id="resume-upload">
+        <label>
+          <input type = "file" name = "File">
+          <span>Select a resume to upload</span>
+        </label>
+        <input type = "submit" value = "Submit" />
       </form>
     </section>
 </main>
