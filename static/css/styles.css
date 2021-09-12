@@ -225,6 +225,13 @@ main section > iframe {
   max-height: 100vh;
   margin: 0;
 }
+main section #adobe-dc-view {
+  height: 1000px;
+  width: 800px;
+  max-width: 95vw;
+  max-height: 100vh;
+  margin: 0;
+}
 main address p {
   margin: 20px 50px;
 }
@@ -480,6 +487,10 @@ a.navbar-brand:hover {
   }
 }
 @media (max-width: 500px) {
+  #adobe-dc-view {
+    max-height: 700px !important;
+  }
+
   .slideshow {
     width: 100vw;
     min-width: 0;

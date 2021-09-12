@@ -9,6 +9,10 @@ bp = Blueprint("blog", __name__)
 @bp.route("/blog")
 def blogroute():
     """ Route for blog """
-    
     return render_template("blog.html")
+
+@bp.route("/blog-editor")
+def blogedit():
+    """ Edit blog content """
+    return render_template("blog-editor.html")
 

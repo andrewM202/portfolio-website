@@ -38,7 +38,20 @@
 </nav>
 <main>
     <section class="vw-100 h-auto minh-1000 d-flex justify-content-center align-items-center flex-wrap container-fluid bg-linear-fade jumbo-container">
-      <iframe src="{{ url_for('static', filename='resume/resume.pdf') }}"></iframe>
+      <!-- <iframe src="{{ url_for('static', filename='resume/resume.pdf') }}"></iframe> -->
+      <div id="adobe-dc-view"></div>
+      <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+      <script type="text/javascript">
+          document.addEventListener("adobe_dc_view_sdk.ready", function()
+          {
+              var adobeDCView = new AdobeDC.View({clientId: "c17f9f743632475dbfeee2a78ff3409b", divId: "adobe-dc-view"});
+              adobeDCView.previewFile(
+            {
+                content:   {location: {url: "{{ url_for('static', filename='resume/resume.pdf') }}"}},
+                metaData: {fileName: "AndrewMattResume.pdf"}
+            });
+          });
+      </script>
     </section>
 </main>
 <footer class="vh-18 minh-500 vw-100 d-flex flex-column align-items-center text-white dark blue-bd-top h-auto">
