@@ -27,10 +27,12 @@ def resumeProcess():
     if request.method == 'POST':
         file = request.files['File']
         if file and allowed_file(file.filename):
+            # change filename name
+            file.filename = 'resume.pdf'
             filename = secure_filename(file.filename)
             # save file to specified directory
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return "File saved successfully"
+            return redirect('/resume')
         else:
             return "Invalid File"
     else:

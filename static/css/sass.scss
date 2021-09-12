@@ -97,6 +97,15 @@ header {
 }
 
 main { 
+    section {
+        > iframe { 
+            height: 1200px;
+            width: 1000px;
+            max-width: 95vw;
+            max-height: 100vh;
+            margin: 0;
+        }
+    }
     address p {
         margin: 20px 50px; 
      }   
