@@ -8,8 +8,8 @@ bp = Blueprint("resume", __name__)
 @bp.route("/resume")
 def viewresume():
     """ Route for resume """
-
-    return render_template("resume.html")
+    adobe_id = os.environ.get('ADOBE_ID')
+    return render_template("resume.html", adobe_id=adobe_id)
 
 @bp.route("/resume-upload")
 def uploadresume():
