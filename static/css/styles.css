@@ -230,7 +230,7 @@ main section #adobe-dc-view {
   width: 800px;
   max-width: 95vw;
   max-height: 100vh;
-  margin: 0;
+  margin: 50px 0;
 }
 main address p {
   margin: 20px 50px;
