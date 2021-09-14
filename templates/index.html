@@ -29,10 +29,12 @@
       let url = "{{ url_for('static', filename='resume/resume.pdf') }}";
       let adobeId = "{{ adobe_id }}";
     </script>
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/ee7a721574.js" crossorigin="anonymous"></script>
 {% endblock %}
 
 {% block body %}
-<button id="adobe-close" style="display: none;">test</button>
+<i class="fas fa-times" id="adobe-close" style="display: none;"></i>
 <div id="gray-bg" style="display: none;"></div>
 <div id="adobe-dc-view" style="display: none;"></div>
 <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>

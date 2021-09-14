@@ -19,7 +19,7 @@ $(document).ready(function () {
         })
         $("#adobe-close").css({
             "display": "inherit",
-            "top": $(document).scrollTop()
+            "top": $(document).scrollTop() + 10
         })
         $("body").css({
             "overflow": "hidden"
