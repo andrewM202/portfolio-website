@@ -3,6 +3,7 @@ from flask_socketio import SocketIO, send, emit
 from models import Quickchat, db
 from flask_mongoengine import MongoEngine
 from datetime import datetime
+import os
 
 bp = Blueprint("homepage", __name__)
 
@@ -12,8 +13,9 @@ def query_all():
     if len(Quickchat.objects()) > 0:
         messages = Quickchat.objects()
         length = len(messages)
-        # return messages
-        return render_template("index.html", messages=messages, length=length)
+        # get adobe API key
+        adobe_id = os.environ.get('ADOBE_ID')
+        return render_template("index.html", messages=messages, length=length, adobe_id=adobe_id)
     else:
         return render_template("index.html")
 

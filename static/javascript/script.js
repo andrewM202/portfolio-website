@@ -12,4 +12,34 @@ $(document).ready(function () {
     }
     $("header h1.fade-animation").hide().fadeIn(1500);
 
+    $("#resume-click").click(function () {
+        $("#gray-bg").css({
+            "display": "inherit",
+            "height": $(document).height()
+        })
+        $("#adobe-close").css({
+            "display": "inherit",
+            "top": $(document).scrollTop()
+        })
+        $("body").css({
+            "overflow": "hidden"
+        })
+        $("#adobe-dc-view").css({
+            "display": "inherit",
+            "opacity": "100%",
+            "top": $(document).scrollTop()
+        })
+    });
+    $("#adobe-close").click(function () {
+        $("#adobe-close").css("display", "none")
+        $("#gray-bg").css({
+            "display": "none"
+        })
+        $("#adobe-dc-view").css({
+            "display": "none",
+        })
+        $("body").css({
+            "overflow": "inherit"
+        })
+    });
 });

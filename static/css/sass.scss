@@ -270,6 +270,36 @@ footer {
     margin: 0;
 }
 
+#adobe-dc-view {
+    position: absolute;
+    height: 1000px;
+    width: 800px;
+    max-width: 100vw;
+    max-height: calc(max-width / 2);
+    z-index: 3;
+    background-color: black;
+    top: 15vh;
+    left: 50%;
+    margin-left: -400px;
+}
+#adobe-close {
+    position: absolute;
+    display: inherit;
+    z-index: 6;
+    min-width: 50px !important;
+    min-height: 50px !important;
+    left: calc(50% + 350px);
+    top: 15vh;
+}
+
+#gray-bg {
+    position: absolute;
+    width: 100vw;
+    z-index: 2;
+    background-color: black;
+    opacity: 30%;
+}
+
 nav {
     position: sticky !important;
     top: 0;
@@ -277,6 +307,7 @@ nav {
     .nav-item {
         font-size: 1.3rem;
         margin-right: 30px;
+        cursor: pointer;
     }
     .nav-item-sec {
         font-size: 1.3rem;

@@ -32,7 +32,7 @@ def resumeProcess():
             filename = secure_filename(file.filename)
             # save file to specified directory
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect('/resume')
+            return redirect('/r')
         else:
             return "Invalid File"
     else:

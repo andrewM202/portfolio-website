@@ -23,9 +23,19 @@
     <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
     <!-- stylesheet link -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- adobe js -->
+    <script src="{{ url_for('static', filename='javascript/adobe.js') }}"></script>
+    <script>
+      let url = "{{ url_for('static', filename='resume/resume.pdf') }}";
+      let adobeId = "{{ adobe_id }}";
+    </script>
 {% endblock %}
 
 {% block body %}
+<button id="adobe-close" style="display: none;">test</button>
+<div id="gray-bg" style="display: none;"></div>
+<div id="adobe-dc-view" style="display: none;"></div>
+<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
 <header class="vw-100 vh-18 minh-183 d-flex justify-content-center align-items-center blue-bd-top">
     <h1 class="animation">Andrew Matt</h1><h2>Portfolio</h2>
 </header>
@@ -68,7 +78,8 @@
           <a class="nav-link text-white" href="#projects">Projects</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="/resume">Resume</a>
+          <a id="resume-click" class="nav-link text-white">Resume</a>
+          <!-- <a class="nav-link text-white" href="/resume">Resume</a> -->
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="/blog">Blog</a>
