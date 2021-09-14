@@ -481,6 +481,8 @@ nav .offcanvas-body div.form-holder form textarea {
 }
 .carousel-container div.slideshow {
   margin: 0 15vw;
+  border: 5px solid #CCDAE5;
+  border-radius: 5px;
 }
 .carousel-container p.project-desc {
   font-size: 1.3rem;
