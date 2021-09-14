@@ -350,8 +350,9 @@ nav {
         }
     }
 }
-
-.bg-linear-fade { background: linear-gradient(180deg, #4CA1A3, #C8C2BC, #D6D2C4, #4CA1A3) }
+.bg-linear-fade { background: linear-gradient(180deg, #4CA1A3, #CCDAE5, #CCDAE5, #4CA1A3) }
+// .bg-linear-fade { background: linear-gradient(180deg, #4CA1A3, #C8C2BC, #D6D2C4, #4CA1A3) }
+// .bg-linear-fade { background: linear-gradient(180deg, #ACC5E8, #CCDAE5, #CCDAE5, #ACC5E8) }
 
 .bg-radial-fade { background: radial-gradient(white 85%, #4CA1A3) }
 
@@ -369,7 +370,6 @@ nav {
     }
     div.slideshow {
         margin: 0 15vw;
-        // border-bottom: 50px solid #212529;
     }
     p.project-desc {
         font-size: 1.3rem;
