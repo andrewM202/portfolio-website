@@ -205,31 +205,57 @@
 body {
   background: #212529;
 }
+body > header {
+  background: white;
+}
+body > header h1 {
+  font-size: 3rem;
+  margin-right: 25px;
+}
 
 address {
   margin: 0;
 }
 
-header {
-  background: white;
+section.project-select {
+  min-height: 100px;
+  height: auto;
+  width: 100vw;
+  background-color: #79B4B7;
+  opacity: 100%;
+  flex-wrap: wrap;
 }
-header h1 {
-  font-size: 3rem;
-  margin-right: 25px;
+section.project-select div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: calc(100% / 6);
+  border-right: 1px solid black;
+  border-left: 1px solid black;
 }
 
-main section > iframe {
-  height: 1200px;
-  width: 1000px;
-  max-width: 95vw;
-  max-height: 100vh;
-  margin: 0;
+main section .project-div header {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main section .project-div header h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 100px;
+  width: 350px;
+}
+main section .project-div header:last-child {
+  margin: 0 0 250px 0 !important;
 }
 main section #adobe-dc-view {
-  height: 1000px;
+  height: 950px;
   width: 800px;
   max-width: 95vw;
-  max-height: 100vh;
   margin: 50px 0;
 }
 main section #resume-upload label {
@@ -441,13 +467,32 @@ nav .offcanvas-body div.form-holder form textarea {
   background: radial-gradient(white 85%, #4CA1A3);
 }
 
-.carousel-control-next,
-.carousel-control-prev {
+.carousel-container {
+  margin: 100px 0;
+  height: auto;
+}
+.carousel-container .carousel-control-next,
+.carousel-container .carousel-control-prev {
   width: 50%;
   height: 100px;
-  margin-top: 400px;
-  border-radius: 5px;
+  top: calc(100% - 100px);
   cursor: pointer;
+  background-color: gray;
+}
+.carousel-container div.slideshow {
+  margin: 0 15vw;
+}
+.carousel-container p.project-desc {
+  font-size: 1.3rem;
+  margin: 0 15vw;
+}
+.carousel-container .carousel-item {
+  width: 100%;
+  height: 100%;
+}
+.carousel-container .carousel-item img {
+  width: 100%;
+  height: 100%;
 }
 
 .form-container div {
@@ -515,15 +560,25 @@ a.navbar-brand:hover {
   .nav-item-sec {
     margin: 0 0 !important;
   }
+
+  section.project-select div {
+    height: 75px;
+    width: calc(100% / 3) !important;
+  }
+  section.project-select div.row-one {
+    border-bottom: 2px solid #1EAE98;
+  }
+
+  .carousel-container div.slideshow {
+    margin: 0;
+  }
+  .carousel-container p.project-desc {
+    margin: 0 10px;
+  }
 }
 @media (max-width: 500px) {
   #adobe-dc-view {
     max-height: 700px !important;
-  }
-
-  .slideshow {
-    width: 100vw;
-    min-width: 0;
   }
 
   .jumbotron {
@@ -545,8 +600,8 @@ a.navbar-brand:hover {
     margin: 0;
   }
 
-  .carousel-control-prev span.text-center,
-.carousel-control-next span.text-center {
+  .carousel-container .carousel-control-prev span.text-center,
+.carousel-container .carousel-control-next span.text-center {
     font-size: 1.5rem;
     margin: 0;
   }
