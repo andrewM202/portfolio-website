@@ -380,6 +380,15 @@ nav {
 .carousel-container {
     margin: 100px 0;
     height: auto;
+    header.resume-header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 0 15vw;
+        h5 {
+            margin: 0 50px !important;
+        }
+    }
     .carousel-control-next,
     .carousel-control-prev {
         width: 50%;
@@ -531,6 +540,10 @@ a.navbar-brand:hover {
         }
     }
     .carousel-container {
+        header.resume-header {
+            flex-direction: column;
+            justify-content: center;
+        }
         .carousel-control-prev span.text-center,
         .carousel-control-next span.text-center {
             font-size: 1.5rem;

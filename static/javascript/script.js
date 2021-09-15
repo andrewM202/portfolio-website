@@ -59,25 +59,76 @@ $(document).ready(function () {
     });
 
     let projDescs =  [
-        // Weather site
-        "Utilizes the PHP framework Laravel to dynamically access current weather, news, pollution data, and facts of the country of original with API calls.",
-        // Social media site
-        "social media site",
-        // shopping site
-        "shopping site",
-        // old portfoio
-        "Old portfolio",
-        // DOM adventure game
-        "DOM adventure",
-        // tic tac toe
-        "Tic tac toe",
-        // Website template
-        "Website template"
+        {
+            // Weather site
+            "desc": `Utilizes the PHP framework Laravel to dynamically 
+            access current weather, news, pollution data, 
+            and facts of the country of original with API calls.`,
+            "link": `https://weather-app421.herokuapp.com/`,
+            'github': `https://github.com/andrewM202/weather-news-app`,
+            'name': `Weather site`
+        },
+        {
+            // Social media site
+            "desc": `A global chat application created in collaboration 
+            with peer developers using git. Utilizes the Flask framework,
+            with WebSocket requests for the chat functionality.`,
+            "link": `https://social-media-app421.herokuapp.com/`,
+            'github': `https://github.com/andrewM202/social-media-app`,
+            'name': `Chat Application`
+        },
+        {
+            // shopping site
+            "desc": `The first application I created with a SQL backend. Utilizes 
+            the Flask framework.`,
+            "link": `https://shopping-cart952.herokuapp.com/`,
+            'github': `https://github.com/andrewM202/shopping-cart`,
+            "name": `Shopping site`
+        },
+        {
+            // old portfolio
+            "desc": `My previous portfolio website! A static website that 
+            uses custom SVGs as a border for the website.`,
+            "link": `https://andrewm202.github.io/`,
+            "github": `https://github.com/andrewM202/andrewM202.github.io`,
+            "name": `Old portfolio`
+        },
+        
+        {
+            // DOM adventure game
+            "desc": `An adventure game entrirely created using vanilla JavaScript 
+            DOM methods to rebuild each scene in the game.`,
+            "link": `https://andrewm202.github.io/dom-adventure-game/`,
+            "github": `https://github.com/andrewM202/dom-adventure-game`,
+            "name": `DOM Adventure Game`
+        },
+        {
+            // tic tac toe
+            "desc": `A simple tic-tac-toe game built from scratch using vanilla
+            JavaScript.`,
+            "link": `https://andrewm202.github.io/tic-tac-toe/`,
+            "github": `https://github.com/andrewM202/tic-tac-toe`,
+            "name": `Tic-Tac-Toe`
+        },
+        {
+            // Website template
+            "desc": `A static website template built as I was learning CSS Grid and
+            Flexbox, in order to fully understand the concept.`,
+            "link": `https://andrewm202.github.io/Website-Template/`,
+            "github": `https://github.com/andrewM202/Website-Template`,
+            "name": `Website template`
+        }
     ]
 
-    // Refresh the text for the project description
     setInterval(function () {
+        // Refresh the text for the project description
         let currProject = Number($(".active").attr("id"));
-        $(".project-desc").text(projDescs[currProject]);
+        $(".project-desc").text(projDescs[currProject].desc);
+        // Refresh the text and href for the project link
+        $("#resume-link").attr("href", projDescs[currProject].link)
+        $("#resume-link").children().text(projDescs[currProject].name + "\'s Live Site Here")
+        // Refresh the text and href for the project github
+        $("#resume-github").attr("href", projDescs[currProject].github)
+        $("#resume-github").children().text(projDescs[currProject].name + "\'s Github Here")
     }, 1);
 });

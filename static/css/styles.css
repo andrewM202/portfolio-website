@@ -492,6 +492,15 @@ nav .offcanvas-body div.form-holder form textarea {
   margin: 100px 0;
   height: auto;
 }
+.carousel-container header.resume-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 15vw;
+}
+.carousel-container header.resume-header h5 {
+  margin: 0 50px !important;
+}
 .carousel-container .carousel-control-next,
 .carousel-container .carousel-control-prev {
   width: 50%;
@@ -639,6 +648,10 @@ a.navbar-brand:hover {
     margin: 0;
   }
 
+  .carousel-container header.resume-header {
+    flex-direction: column;
+    justify-content: center;
+  }
   .carousel-container .carousel-control-prev span.text-center,
 .carousel-container .carousel-control-next span.text-center {
     font-size: 1.5rem;
