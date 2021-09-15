@@ -3,11 +3,6 @@
 {% block head %}
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- Animate CSS CDN -->
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
     <!-- Hover CSS CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Bootstrap 5 CDN -->
@@ -148,8 +143,8 @@
         <div class="carousel-container d-flex flex-column align-items-center">
             <h4 class="text-center">Project Display</h4>
             <header class="resume-header">
-              <a href="" id="resume-link" target="_blank"><h5>Test1</h5></a>
-              <a href="" id="resume-github" target="_blank"><h5>Test2</h5></a>
+              <a href="" id="resume-link" class="hvr-grow" target="_blank"><h5>Test1</h5></a>
+              <a href="" id="resume-github" class="hvr-grow" target="_blank"><h5>Test2</h5></a>
             </header>
             <div class="tertiary slideshow">
                 <!-- Start of carousel -->
@@ -195,7 +190,7 @@
     </section>
     <address class="minh-600 vw-100 light d-flex flex-column justify-content-center align-items-center bd-black-top">
         <h4>Contact Me</h4>
-        <p class="text-center">Want to connect, or just send me an interesting message? Send me an email below, or add me on <a href="https://www.linkedin.com/in/andrew-matt/">LinkedIn</a>!</p>
+        <p class="text-center">Want to connect, or just send me an interesting message? Send me an email below, or add me on <a href="https://www.linkedin.com/in/andrew-matt/" class="hvr-grow">LinkedIn</a>!</p>
         {% if mail_error %}
             <p>Error sending email: {{ mail_error }}</p>
         {% endif %}
