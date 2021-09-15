@@ -12,6 +12,7 @@ $(document).ready(function () {
     }
     $("header h1.fade-animation").hide().fadeIn(1500);
 
+    // Open the resume if the resume button is clicked
     $("#resume-click").click(function () {
         $("#gray-bg").css({
             "display": "inherit",
@@ -30,7 +31,21 @@ $(document).ready(function () {
             "top": $(document).scrollTop()
         })
     });
+    // If the cancel button is clicked, close the resume
     $("#adobe-close").click(function () {
+        $("#adobe-close").css("display", "none")
+        $("#gray-bg").css({
+            "display": "none"
+        })
+        $("#adobe-dc-view").css({
+            "display": "none",
+        })
+        $("body").css({
+            "overflow": "inherit"
+        })
+    });
+    // If the gray background is clicked, close the resume
+    $("#gray-bg").click(function () {
         $("#adobe-close").css("display", "none")
         $("#gray-bg").css({
             "display": "none"
