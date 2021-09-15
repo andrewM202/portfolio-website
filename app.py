@@ -19,6 +19,7 @@ db.init_app(app)
 # Create a Flask-Mail instance
 mail = Mail(app)
 
+# Create a socketio instance
 socketio = SocketIO(app)
 
 # Register Routes / Import Blueprints
