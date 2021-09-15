@@ -28,9 +28,6 @@ app.register_blueprint(homepage.bp)
 import blog
 app.register_blueprint(blog.bp)
 
-import projects
-app.register_blueprint(projects.bp)
-
 import resume
 app.register_blueprint(resume.bp)
 
