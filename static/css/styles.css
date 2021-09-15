@@ -499,7 +499,13 @@ nav .offcanvas-body div.form-holder form textarea {
   margin: 0 15vw;
 }
 .carousel-container header.resume-header h5 {
-  margin: 0 50px !important;
+  margin: 3px 50px !important;
+  color: black;
+  text-decoration: none;
+  border-bottom: 3px solid #1EAE98;
+}
+.carousel-container header.resume-header h5:hover {
+  color: gray;
 }
 .carousel-container .carousel-control-next,
 .carousel-container .carousel-control-prev {

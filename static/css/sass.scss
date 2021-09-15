@@ -386,7 +386,13 @@ nav {
         justify-content: center;
         margin: 0 15vw;
         h5 {
-            margin: 0 50px !important;
+            margin: 3px 50px !important;
+            color: black;
+            text-decoration: none;
+            border-bottom: 3px solid #1EAE98; 
+        }
+        h5:hover {
+            color: gray;
         }
     }
     .carousel-control-next,
