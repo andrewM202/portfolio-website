@@ -42,4 +42,27 @@ $(document).ready(function () {
             "overflow": "inherit"
         })
     });
+
+    let projDescs =  [
+        // Weather site
+        "Utilizes the PHP framework Laravel to dynamically access current weather, news, pollution data, and facts of the country of original with API calls.",
+        // Social media site
+        "social media site",
+        // shopping site
+        "shopping site",
+        // old portfoio
+        "Old portfolio",
+        // DOM adventure game
+        "DOM adventure",
+        // tic tac toe
+        "Tic tac toe",
+        // Website template
+        "Website template"
+    ]
+
+    // Refresh the text for the project description
+    setInterval(function () {
+        let currProject = Number($(".active").attr("id"));
+        $(".project-desc").text(projDescs[currProject]);
+    }, 1);
 });

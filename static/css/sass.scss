@@ -263,7 +263,7 @@ footer {
     width: 800px !important;
     max-width: 100vw;
     max-height: calc(max-width / 2);
-    z-index: 3;
+    z-index: 6;
     background-color: black;
     left: 50%;
     margin-left: -400px;
@@ -271,7 +271,7 @@ footer {
 #adobe-close {
     position: absolute;
     display: inherit;
-    z-index: 6;
+    z-index: 7;
     min-width: 30px !important;
     min-height: 30px !important;
     left: calc(50% + 378px);
@@ -281,7 +281,7 @@ footer {
 #gray-bg {
     position: absolute;
     width: 100vw;
-    z-index: 2;
+    z-index: 5;
     background-color: black;
     opacity: 60%;
 }
