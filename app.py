@@ -3,7 +3,7 @@ from config import Config
 from flask_socketio import SocketIO
 from flask_migrate import Migrate
 from flask_mail import Mail
-from models import db
+from models import db, login
 from flask_sitemap import Sitemap
 
 app = Flask(__name__)
@@ -20,6 +20,10 @@ mail = Mail(app)
 
 # Create a socketio instance
 socketio = SocketIO(app)
+
+# Create Flask-Login instance
+login.init_app(app)
+login.login_view = 'login'
 
 # Register Routes / Import Blueprints
 import homepage

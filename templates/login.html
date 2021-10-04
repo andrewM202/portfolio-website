@@ -26,23 +26,25 @@
         <li class="nav-item nav-item-sec">
           <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
         </li>
-        <li class="nav-item nav-item-sec">
-          <a class="nav-link text-white" href="/projects">Projects</a>
-        </li>
-        <li class="nav-item nav-item-sec">
-          <a class="nav-link text-white" href="/resume">Resume</a>
-        </li>
       </ul>
     </div>
   </div>
 </nav>
 <main>
-    <section class="vw-100 h-auto minh-1000 d-flex justify-content-center align-items-center flex-wrap container-fluid bg-linear-fade jumbo-container">
-        <form action=/login method="POST">
+    <section class="vw-100 h-auto minh-800 d-flex flex-column justify-content-center align-items-center flex-wrap container-fluid bg-linear-fade jumbo-container">
+        {% if current_user.is_authenticated %}
+        <h3>You are logged in.</h3>
+        <form class="loginform" action=/logout method="POST">
+          <input type="submit" value="Logout">
+        </form>
+        {% else %}
+        <h3>You are not logged in.</h3>
+        <form class="loginform" action=/login method="POST">
             <input type="text" placeholder="Please enter a username" name="user-name">
             <input type="password" placeholder="Please enter a password" name="user-password">
             <input type="submit" value="Login">
         </form>
+        {% endif %}
     </section>
 </main>
 <footer class="vh-18 minh-500 vw-100 d-flex flex-column align-items-center text-white dark blue-bd-top h-auto">
