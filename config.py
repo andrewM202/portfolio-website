@@ -8,9 +8,6 @@ class Config(object):
     TESTING = False
     CSRF_ENABLED = True
     SECRET_KEY = 'this-really-needs-to-be-changed'
-    # SQLALCHEMY_DATABASE_URI sets the app to use the newly created database
-    # SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
     # SEND_FILE_MAX_AGE_DEFAULT makes it so the browser doesn't store any of the CSS or HTML in a cache. It makes for easier development
     SEND_FILE_MAX_AGE_DEFAULT = 0
     # EMAIL SETTINGs
