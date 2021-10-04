@@ -143,49 +143,32 @@
         <div class="carousel-container d-flex flex-column align-items-center">
             <h4 class="text-center">Project Display</h4>
             <header class="resume-header">
-              <a href="" id="resume-link" class="hvr-grow" target="_blank"><h5>Test1</h5></a>
-              <a href="" id="resume-github" class="hvr-grow" target="_blank"><h5>Test2</h5></a>
+              <a href="https://weather-app421.herokuapp.com/" id="resume-link" class="hvr-grow" target="_blank"><h5>Weather Site's Live Site Here"</h5></a>
+              <a href="https://github.com/andrewM202/weather-news-app" id="resume-github" class="hvr-grow" target="_blank"><h5>Weather Site's GitHub Here</h5></a>
             </header>
-            <div class="tertiary slideshow">
-                <!-- Start of carousel -->
-                <div id="carouselFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                  <div class="carousel-inner">
-                    <div id="0" class="carousel-item active">
-                        <img src="{{url_for('static', filename='images/weather-site.png')}}" alt="Weather-Website">
-                    </div>
-                    <div id="1"  class="carousel-item">
-                      <img src="{{url_for('static', filename='images/social-site.png')}}" alt="...">
-                    </div>
-                    <div id="2"  class="carousel-item">
-                      <img src="{{url_for('static', filename='images/shopping-site.png')}}" alt="...">
-                    </div>
-                    <div id="3"  class="carousel-item">
-                      <img src="{{url_for('static', filename='images/old-portfolio.png')}}" alt="...">
-                    </div>
-                    <div id="4"  class="carousel-item">
-                      <img src="{{url_for('static', filename='images/DOM-adventure.png')}}" alt="...">
-                    </div>
-                    <div id="5"  class="carousel-item">
-                      <img src="{{url_for('static', filename='images/ttt-site.png')}}" alt="...">
-                    </div>
-                    <div id="6"  class="carousel-item">
-                      <img src="{{url_for('static', filename='images/template-site.png')}}" alt="...">
-                    </div>
-                  </div>
-                  <div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselFade" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden text-dark text-center">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselFade" data-bs-slide="next">
-                    <span class="visually-hidden text-dark text-center">Next</span>
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  </button>
-                  </div>
-                </div>
-                <!-- End of carousel -->
-            </div>
-            <p class="project-desc"></p>
+            <figure>
+              <div>
+                <button class="carousel-prev">
+                  <span class="carousel-control-prev-icon"></span>
+                  <span class="visually-hidden text-dark text-center">Previous</span>
+                </button>
+                <button class="carousel-next">
+                  <span class="visually-hidden text-dark text-center">Next</span>
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+              </div>
+              <img class="active" src="{{url_for('static', filename='images/weather-site.png')}}" alt="Weather_Website">
+              <img src="{{url_for('static', filename='images/social-site.png')}}" alt="Chat_Application">
+              <img src="{{url_for('static', filename='images/shopping-site.png')}}" alt="Shopping_Site">
+              <img src="{{url_for('static', filename='images/old-portfolio.png')}}" alt="Old_Portfolio">
+              <img src="{{url_for('static', filename='images/DOM-adventure.png')}}" alt="DOM_Adventure_Game">
+              <img src="{{url_for('static', filename='images/ttt-site.png')}}" alt="Tic-Tac-Toe">
+              <img src="{{url_for('static', filename='images/template-site.png')}}" alt="Website_Template">
+            </figure>
+            <figcaption class="project-desc">Utilizes the PHP framework Laravel to dynamically 
+              access current weather, news, pollution data, 
+              and facts of the country of original with API calls.
+            </figcaption>
         </div>
     </section>
     <address class="minh-600 vw-100 light d-flex flex-column justify-content-center align-items-center bd-black-top">
