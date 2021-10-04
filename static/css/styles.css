@@ -230,7 +230,7 @@ section.project-select div {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  width: calc(100% / 6);
+  width: 16.6666666667%;
   border-right: 1px solid black;
   border-left: 1px solid black;
 }
@@ -373,7 +373,6 @@ footer h5 {
   position: absolute;
   width: 800px !important;
   max-width: 100vw;
-  max-height: calc(max-width / 2);
   z-index: 6;
   background-color: black;
   left: 50%;
@@ -492,6 +491,45 @@ nav .offcanvas-body div.form-holder form textarea {
   margin: 100px 0;
   height: auto;
 }
+.carousel-container figure {
+  position: relative;
+  height: 600px;
+  width: 900px;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #CCDAE5;
+}
+.carousel-container figure img {
+  max-width: 100%;
+  max-height: 100%;
+  display: none;
+}
+.carousel-container figure .active {
+  display: inline-block;
+}
+.carousel-container figure div {
+  position: absolute;
+  width: 100%;
+  min-height: 100px;
+  top: calc(100% - 100px);
+  display: flex !important;
+  flex-direction: row;
+  opacity: 50%;
+}
+.carousel-container figure div .carousel-next,
+.carousel-container figure div .carousel-prev {
+  min-height: 100%;
+  min-width: 50%;
+  cursor: pointer;
+  background-color: gray;
+  color: white;
+}
+.carousel-container figure div .carousel-next:hover,
+.carousel-container figure div .carousel-prev:hover {
+  background-color: #464545;
+}
 .carousel-container header.resume-header {
   width: 100%;
   display: flex;
@@ -507,30 +545,12 @@ nav .offcanvas-body div.form-holder form textarea {
 .carousel-container header.resume-header h5:hover {
   color: gray;
 }
-.carousel-container .carousel-control-next,
-.carousel-container .carousel-control-prev {
-  width: 50%;
-  height: 100px;
-  top: calc(100% - 100px);
-  cursor: pointer;
-  background-color: gray;
-}
-.carousel-container div.slideshow {
-  margin: 0 15vw;
-  border: 5px solid #CCDAE5;
-  border-radius: 5px;
-}
-.carousel-container p.project-desc {
+.carousel-container figcaption.project-desc {
   font-size: 1.3rem;
-  margin: 0 15vw;
-}
-.carousel-container .carousel-item {
-  width: 100%;
-  height: 100%;
-}
-.carousel-container .carousel-item img {
-  width: 100%;
-  height: 100%;
+  width: 900px;
+  max-width: 100vw;
+  padding: 0 10px;
+  min-height: 100px;
 }
 
 .form-container div {
@@ -601,44 +621,10 @@ a.navbar-brand:hover {
 
   section.project-select div {
     height: 75px;
-    width: calc(100% / 3) !important;
+    width: 33.3333333333% !important;
   }
   section.project-select div.row-one {
     border-bottom: 2px solid #1EAE98;
-  }
-
-  .carousel-container div.slideshow {
-    margin: 0;
-  }
-  .carousel-container p.project-desc {
-    margin: 0 10px;
-  }
-}
-@media (max-width: 800px) {
-  #adobe-dc-view {
-    margin-left: 0;
-    left: 0;
-  }
-
-  #adobe-close {
-    left: calc(96.5vw);
-  }
-}
-@media (max-width: 500px) {
-  .box {
-    margin-right: 0;
-    margin-left: 0;
-    max-width: 100vw !important;
-  }
-
-  #adobe-dc-view {
-    max-height: 700px !important;
-  }
-
-  .jumbotron {
-    height: 950px;
-    margin: 25px 0;
-    width: 85vw;
   }
 
   .mini-jumbotron {
@@ -654,14 +640,15 @@ a.navbar-brand:hover {
     margin: 0;
   }
 
+  .carousel-container {
+    width: 85vw;
+  }
   .carousel-container header.resume-header {
     flex-direction: column;
     justify-content: center;
   }
-  .carousel-container .carousel-control-prev span.text-center,
-.carousel-container .carousel-control-next span.text-center {
-    font-size: 1.5rem;
-    margin: 0;
+  .carousel-container figure {
+    height: auto;
   }
 
   address .form-container {

@@ -66,7 +66,8 @@ $(document).ready(function () {
             and facts of the country of original with API calls.`,
             "link": `https://weather-app421.herokuapp.com/`,
             'github': `https://github.com/andrewM202/weather-news-app`,
-            'name': `Weather site`
+            'alt': `Weather_Website`,
+            'name': `Weather Website`
         },
         {
             // Social media site
@@ -75,6 +76,7 @@ $(document).ready(function () {
             with WebSocket requests for the chat functionality.`,
             "link": `https://social-media-app421.herokuapp.com/`,
             'github': `https://github.com/andrewM202/social-media-app`,
+            'alt': `Chat_Application`,
             'name': `Chat Application`
         },
         {
@@ -83,7 +85,8 @@ $(document).ready(function () {
             the Flask framework.`,
             "link": `https://shopping-cart952.herokuapp.com/`,
             'github': `https://github.com/andrewM202/shopping-cart`,
-            "name": `Shopping site`
+            "alt": `Shopping_Site`,
+            'name': `Shopping Site`
         },
         {
             // old portfolio
@@ -91,7 +94,8 @@ $(document).ready(function () {
             uses custom SVGs as a border for the website.`,
             "link": `https://andrewm202.github.io/`,
             "github": `https://github.com/andrewM202/andrewM202.github.io`,
-            "name": `Old portfolio`
+            "alt": `Old_Portfolio`,
+            'name': `Old Portfolio`
         },
         
         {
@@ -100,6 +104,7 @@ $(document).ready(function () {
             DOM methods to rebuild each scene in the game.`,
             "link": `https://andrewm202.github.io/dom-adventure-game/`,
             "github": `https://github.com/andrewM202/dom-adventure-game`,
+            "alt": `DOM_Adventure_Game`,
             "name": `DOM Adventure Game`
         },
         {
@@ -108,6 +113,7 @@ $(document).ready(function () {
             JavaScript.`,
             "link": `https://andrewm202.github.io/tic-tac-toe/`,
             "github": `https://github.com/andrewM202/tic-tac-toe`,
+            "alt": `Tic-Tac-Toe`,
             "name": `Tic-Tac-Toe`
         },
         {
@@ -116,19 +122,115 @@ $(document).ready(function () {
             Flexbox, in order to fully understand the concept.`,
             "link": `https://andrewm202.github.io/Website-Template/`,
             "github": `https://github.com/andrewM202/Website-Template`,
-            "name": `Website template`
+            "alt": `Website_Template`,
+            "name": `Website Template`
         }
     ]
 
-    setInterval(function () {
-        // Refresh the text for the project description
-        let currProject = Number($(".active").attr("id"));
-        $(".project-desc").text(projDescs[currProject].desc);
-        // Refresh the text and href for the project link
-        $("#resume-link").attr("href", projDescs[currProject].link)
-        $("#resume-link").children().text(projDescs[currProject].name + "\'s Live Site Here")
-        // Refresh the text and href for the project github
-        $("#resume-github").attr("href", projDescs[currProject].github)
-        $("#resume-github").children().text(projDescs[currProject].name + "\'s Github Here")
-    }, 1);
+    const initializeCarousel = function() {
+        let carouselChildren = $(".carousel-container > figure").children("img");
+        $(".carousel-prev").click(function() {
+            for(let child of carouselChildren) {
+                if(child.className === "active") {
+                    for(let i=0; i<projDescs.length; i++) {
+                        if(child.alt === projDescs[i].alt) {
+                            if($(".active").prev("img").length === 0) {
+                                $("figure").children("img:last-of-type").addClass("active")
+                                $("figure").children(`[alt=${child.alt}]`).removeClass()
+                                $(".project-desc").text(projDescs[projDescs.length-1].desc);
+                                // Refresh the text and href for the project link
+                                $("#resume-link").attr("href", projDescs[projDescs.length-1].link)
+                                $("#resume-link").children().text(projDescs[projDescs.length-1].name + "\'s Live Site Here")
+                                // Refresh the text and href for the project github
+                                $("#resume-github").attr("href", projDescs[projDescs.length-1].github)
+                                $("#resume-github").children().text(projDescs[projDescs.length-1].name + "\'s Github Here")
+
+                            } else {
+                                $(".active").prev().addClass('active')
+                                $("figure").children(`[alt=${child.alt}]`).removeClass()
+                                $(".project-desc").text(projDescs[i-1].desc);
+                                // Refresh the text and href for the project link
+                                $("#resume-link").attr("href", projDescs[i-1].link)
+                                $("#resume-link").children().text(projDescs[i-1].name + "\'s Live Site Here")
+                                // Refresh the text and href for the project github
+                                $("#resume-github").attr("href", projDescs[i-1].github)
+                                $("#resume-github").children().text(projDescs[i-1].name + "\'s Github Here")
+                            }
+                        }
+                    }
+                    break;
+                }
+            }
+        })
+        $(".carousel-next").click(function () {
+            for(let child of carouselChildren) {
+                if(child.className === "active") {
+                    for(let i=0; i<projDescs.length; i++) {
+                        if(child.alt === projDescs[i].alt) {
+                            if($(".active").next("img").length === 0) {
+                                $("figure").children("img:first-of-type").addClass("active")
+                                $("figure").children(`[alt=${child.alt}]`).removeClass()
+                                $(".project-desc").text(projDescs[0].desc);
+                                // Refresh the text and href for the project link
+                                $("#resume-link").attr("href", projDescs[0].link)
+                                $("#resume-link").children().text(projDescs[0].name + "\'s Live Site Here")
+                                // Refresh the text and href for the project github
+                                $("#resume-github").attr("href", projDescs[0].github)
+                                $("#resume-github").children().text(projDescs[0].name + "\'s Github Here")
+
+                            } else {
+                                $(".active").next().addClass('active')
+                                $("figure").children(`[alt=${child.alt}]`).removeClass()
+                                $(".project-desc").text(projDescs[i+1].desc);
+                                // Refresh the text and href for the project link
+                                $("#resume-link").attr("href", projDescs[i+1].link)
+                                $("#resume-link").children().text(projDescs[i+1].name + "\'s Live Site Here")
+                                // Refresh the text and href for the project github
+                                $("#resume-github").attr("href", projDescs[i+1].github)
+                                $("#resume-github").children().text(projDescs[i+1].name + "\'s Github Here")
+                            }
+                        }
+                    }
+                    break;
+                }
+            }
+        })
+
+        setInterval(function() {
+            const nextSlide = function() {
+                for (child of carouselChildren) {
+                    if(child.className === "active") {
+                        for(let i=0; i<projDescs.length; i++) {
+                            if(projDescs[i].alt === child.alt) {
+                                if($(".active").next("img").length === 0) {
+                                    $(`[alt=${child.alt}]`).removeClass("active")
+                                    $("figure").children("img:first-of-type").addClass("active")
+                                    $(".project-desc").text(projDescs[0].desc);
+                                    // Refresh the text and href for the project link
+                                    $("#resume-link").attr("href", projDescs[0].link)
+                                    $("#resume-link").children().text(projDescs[0].name + "\'s Live Site Here")
+                                    // Refresh the text and href for the project github
+                                    $("#resume-github").attr("href", projDescs[0].github)
+                                    $("#resume-github").children().text(projDescs[0].name + "\'s Github Here")
+                                } else {
+                                    $(".active").next("img").addClass("active")
+                                    $(`[alt=${child.alt}]`).removeClass("active")
+                                    $(".project-desc").text(projDescs[i+1].desc);
+                                    // Refresh the text and href for the project link
+                                    $("#resume-link").attr("href", projDescs[i+1].link)
+                                    $("#resume-link").children().text(projDescs[i+1].name + "\'s Live Site Here")
+                                    // Refresh the text and href for the project github
+                                    $("#resume-github").attr("href", projDescs[i+1].github)
+                                    $("#resume-github").children().text(projDescs[i+1].name + "\'s Github Here")
+                                }
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+            nextSlide()
+        }, 5000)
+    }
+    initializeCarousel()
 });
