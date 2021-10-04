@@ -138,10 +138,10 @@ $(document).ready(function () {
                                 $(".project-desc").text(projDescs[projDescs.length-1].desc);
                                 // Refresh the text and href for the project link
                                 $("#resume-link").attr("href", projDescs[projDescs.length-1].link)
-                                $("#resume-link").children().text(projDescs[projDescs.length-1].name + "\'s Live Site Here")
+                                $("#resume-link").children().text(projDescs[projDescs.length-1].name + "\'s Live URL")
                                 // Refresh the text and href for the project github
                                 $("#resume-github").attr("href", projDescs[projDescs.length-1].github)
-                                $("#resume-github").children().text(projDescs[projDescs.length-1].name + "\'s Github Here")
+                                $("#resume-github").children().text(projDescs[projDescs.length-1].name + "\'s Github")
 
                             } else {
                                 $(".active").prev().addClass('active')
@@ -171,10 +171,10 @@ $(document).ready(function () {
                                 $(".project-desc").text(projDescs[0].desc);
                                 // Refresh the text and href for the project link
                                 $("#resume-link").attr("href", projDescs[0].link)
-                                $("#resume-link").children().text(projDescs[0].name + "\'s Live Site Here")
+                                $("#resume-link").children().text(projDescs[0].name + "\'s Live URL")
                                 // Refresh the text and href for the project github
                                 $("#resume-github").attr("href", projDescs[0].github)
-                                $("#resume-github").children().text(projDescs[0].name + "\'s Github Here")
+                                $("#resume-github").children().text(projDescs[0].name + "\'s Github")
 
                             } else {
                                 $(".active").next().addClass('active')
@@ -182,10 +182,10 @@ $(document).ready(function () {
                                 $(".project-desc").text(projDescs[i+1].desc);
                                 // Refresh the text and href for the project link
                                 $("#resume-link").attr("href", projDescs[i+1].link)
-                                $("#resume-link").children().text(projDescs[i+1].name + "\'s Live Site Here")
+                                $("#resume-link").children().text(projDescs[i+1].name + "\'s Live URL")
                                 // Refresh the text and href for the project github
                                 $("#resume-github").attr("href", projDescs[i+1].github)
-                                $("#resume-github").children().text(projDescs[i+1].name + "\'s Github Here")
+                                $("#resume-github").children().text(projDescs[i+1].name + "\'s Github")
                             }
                         }
                     }
@@ -206,20 +206,20 @@ $(document).ready(function () {
                                     $(".project-desc").text(projDescs[0].desc);
                                     // Refresh the text and href for the project link
                                     $("#resume-link").attr("href", projDescs[0].link)
-                                    $("#resume-link").children().text(projDescs[0].name + "\'s Live Site Here")
+                                    $("#resume-link").children().text(projDescs[0].name + "\'s Live URL")
                                     // Refresh the text and href for the project github
                                     $("#resume-github").attr("href", projDescs[0].github)
-                                    $("#resume-github").children().text(projDescs[0].name + "\'s Github Here")
+                                    $("#resume-github").children().text(projDescs[0].name + "\'s Github")
                                 } else {
                                     $(".active").next("img").addClass("active")
                                     $(`[alt=${child.alt}]`).removeClass("active")
                                     $(".project-desc").text(projDescs[i+1].desc);
                                     // Refresh the text and href for the project link
                                     $("#resume-link").attr("href", projDescs[i+1].link)
-                                    $("#resume-link").children().text(projDescs[i+1].name + "\'s Live Site Here")
+                                    $("#resume-link").children().text(projDescs[i+1].name + "\'s Live URL")
                                     // Refresh the text and href for the project github
                                     $("#resume-github").attr("href", projDescs[i+1].github)
-                                    $("#resume-github").children().text(projDescs[i+1].name + "\'s Github Here")
+                                    $("#resume-github").children().text(projDescs[i+1].name + "\'s Github")
                                 }
                             }
                         }
@@ -228,7 +228,7 @@ $(document).ready(function () {
                 }
             }
             nextSlide()
-        }, 5000)
+        }, 10000)
     }
     initializeCarousel()
 });
