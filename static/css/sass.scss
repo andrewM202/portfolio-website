@@ -95,6 +95,25 @@ body {
     }
 }
 
+.blog-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 100px 0;
+    #cke_ckeditor {
+        width: 1000px;
+        max-width: calc(100vw - 24px);
+    }
+    .cke_contents {
+        min-height: 500px;
+    }
+    input {
+        width: 1000px;
+        max-width: calc(100vw - 24px);
+        margin: 10px 0;
+    }
+}
+
 address { margin: 0; }
 
 section.project-select {

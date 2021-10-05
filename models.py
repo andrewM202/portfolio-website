@@ -12,7 +12,12 @@ class Quickchat(db.Document):
     message = db.StringField(required=True)
     datetime = db.DateTimeField()
 
-class User(db.Document, UserMixin):
+class Article(db.Document):
+    """ Articles for blog """
+    title = db.StringField(required=True)
+    date = db.DateField()
+
+class User(db.Document):
     """ Login Information """
     username = db.StringField(required=True)
     password = db.StringField(required=True)

@@ -213,6 +213,25 @@ body > header h1 {
   margin-right: 25px;
 }
 
+.blog-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 100px 0;
+}
+.blog-form #cke_ckeditor {
+  width: 1000px;
+  max-width: calc(100vw - 24px);
+}
+.blog-form .cke_contents {
+  min-height: 500px;
+}
+.blog-form input {
+  width: 1000px;
+  max-width: calc(100vw - 24px);
+  margin: 10px 0;
+}
+
 address {
   margin: 0;
 }

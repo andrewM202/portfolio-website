@@ -25,6 +25,9 @@ class Config(object):
     # file upload 
     UPLOAD_FOLDER = './static/resume/'
     ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+    # Flask-SimpleMDE
+    SIMPLEMDE_JS_IIFE = True
+    SIMPLEMDE_USE_CDN = True
 
 
 class ProductionConfig(Config):
