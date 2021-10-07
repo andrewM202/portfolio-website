@@ -45,9 +45,9 @@
       {% for article in articles %}
       <div class="article">
         <header><h3>{{ article.title }}</h3></header>
-        <p>{{ article.articledesc }}</p>
         <time>Created: {{ article.date }}</time>
-        <figure><img src="{{ url_for('static', filename='blog/' + article.coverimage) }}"><figure>
+        <p>{{ article.articledesc }}</p>
+        <figure><img src="{{ url_for('static', filename='blog/' + article.coverimage) }}"></figure>
       </div>
       {% endfor %}
     </section>
