@@ -1,0 +1,185 @@
+
+/* Slash */
+
+.slash {
+    top: 0;
+    left: 0;
+    position: absolute;
+    opacity: 30%;
+    z-index: -1;
+    height: 750px;
+    width: 750px;
+    max-width: 100vw !important;
+    max-width: 100vh;
+    overflow: hidden;
+}
+
+
+/* Corner pieces */
+
+%corner-piece {
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    opacity: 30%;
+    overflow: hidden;
+}
+.corner-top-left {
+    @extend %corner-piece;
+    top: -20px;
+    left: 0;
+}
+.corner-top-right {
+    @extend %corner-piece;
+    transform: rotate(90deg);
+    right: 0;
+    top: 0;
+}
+.corner-bottom-left {
+    @extend %corner-piece;
+    transform: rotate(270deg);
+    bottom: 0;
+    left: -15px;
+}
+.corner-bottom-right {
+    @extend %corner-piece;
+    transform: rotate(180deg);
+    bottom: -20px;
+    right: 0;
+}
+
+/*----------------------------------------------------------------*/
+
+/* Navbar */
+
+nav {
+    position: sticky !important;
+    top: 0;
+    z-index: 2;
+    .nav-item {
+        font-size: 1.3rem;
+        margin-right: 30px;
+        cursor: pointer;
+    }
+    .nav-item-sec {
+        font-size: 1.3rem;
+        margin: 0 75px;
+    }
+    .navbar-brand {
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+    }
+    .offcanvas-body { 
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        > h3 {
+            text-align: center;
+            width: 100%;
+            font-size: 1.3rem;
+            padding: 10px 0;
+            // border-bottom: 1px solid black;
+            border-radius: 5px;
+            background-color: #D4ECDD;
+            border: 1px solid #F3F1F5;
+            // border: 1px solid #4CA1A3;
+        }
+        div {
+            height: 70%;
+            width: 100%;
+            overflow-y: auto;
+            .message { 
+                border: 3px solid #F3F1F5;
+                width: 100%;
+                min-height: 35px;
+                height: auto;
+                border-radius: 8px;
+                margin: 15px 0;
+                word-break: break-word;
+                background-color: #D7E9F7;
+                p {
+                    padding: 0 10px 0px 10px;
+                }
+                h5 {  
+                    padding: 10px 0 0 10px;
+                }
+            }
+        }
+        div.form-holder {
+            height: 24%;
+            min-height: 225px;
+            align-self: flex-end;
+            border-top: 1px solid #5c636a;
+            padding-top: 10px;
+            form {
+                height: 100%;
+                input {
+                    width: 95%;
+                    margin: 10px 15px;
+                    padding: 5px;
+                }
+                textarea {
+                    width: 95%;
+                    margin: 10px 15px;
+                    min-height: 25px;
+                    height: auto;
+                    resize: none;
+                    padding: 5px;
+                }
+            }
+        }
+    }
+}
+
+/*----------------------------------------------------------------*/
+
+/* Footer */
+
+footer { 
+    > div {
+        max-width: 88vw;
+        margin: 0 6vw;
+    }
+    ul {
+        width: 300px;
+        min-height: 100%;
+        height: auto;
+        max-height: 250px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-left: 100px;
+        margin-right: 250px; // 250 px to center ul
+        li {
+            margin-top: 25px; 
+            font-size: 1.3rem;
+            min-width: 100px;
+            margin-right: 100px;
+            list-style-type: none;
+        }
+    }
+    h4 {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        max-width: 100px;
+    }
+    a {
+        color: white;
+        text-decoration: none;
+        border-bottom: 3px solid gray;
+        word-break: break-all;
+    }
+    a:hover {
+        color: gray;
+    }
+    h5 {
+        margin-top: 50px;
+        word-break: break-all;
+    }
+}
+
+/*----------------------------------------------------------------*/
