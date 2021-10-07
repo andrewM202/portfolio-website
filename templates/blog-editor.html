@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
      <!-- Favicon -->
      <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+     <!-- Flask-CKEditor -->
+     {{ ckeditor.load(pkg_type="full-all") }}
+     <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
 {% endblock %}
 
 {% block body %}
@@ -29,6 +32,9 @@
           <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item nav-item-sec">
+          <a class="nav-link text-white" href="/blog">Blog</a>
+        </li>
+        <li class="nav-item nav-item-sec">
           <a class="nav-link text-white" href="/resume-upload">Resume Upload</a>
         </li>
         <li class="nav-item nav-item-sec">
@@ -39,7 +45,31 @@
   </div>
 </nav>
 <main>
-    <section class="vw-100 h-auto minh-1000 d-flex justify-content-center align-items-center flex-wrap container-fluid bg-linear-fade jumbo-container">
+    <section class="vw-100 h-auto minh-800 d-flex justify-content-center align-items-center flex-wrap container-fluid bg-linear-fade jumbo-container">
+      <form class="blog-form" enctype="multipart/form-data" action=/process-article method="POST">
+        <div class="mb-3">
+        <label>Write Article</label>
+        {{ ckeditor.create() }}
+        </div>
+        <div class="mb-3">
+          <label for="cover-image text-center">Upload Article Instead</label>
+          <input type="file" class="form-control" id="cover-image" name="uploaded-article">
+        <div class="mb-3">
+          <label for="article-title" class="form-label">Article Title</label>
+          <input type="text" class="form-control" id="article-title" aria-describedby="articleTitle" placeholder="Article Title..." name="title">
+        </div>
+        <div class="mb-3">
+          <label for="article-desc"  class="form-label">Article Description</label>
+          <input type="text" class="form-control" id="article-desc" placeholder="Article Description..." name="description">
+        </div>
+        <div class="mb-3">
+          <label for="cover-image">Article Cover Image</label>
+          <input type="file" class="form-control" id="cover-image" name="cover-image">
+        </div>
+        <div class="mb-3">
+          <button type="submit" class="blog-submit form-control btn btn-primary">Submit</button>
+        </div>
+      </form>
     </section>
 </main>
 <footer class="vh-18 minh-500 vw-100 d-flex flex-column align-items-center text-white dark blue-bd-top h-auto">

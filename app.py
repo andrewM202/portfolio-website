@@ -5,6 +5,7 @@ from flask_migrate import Migrate
 from flask_mail import Mail
 from models import db, login
 from flask_sitemap import Sitemap
+from flask_ckeditor import CKEditor
 
 app = Flask(__name__)
 app.config.from_object('config.DevelopmentConfig')
@@ -24,6 +25,9 @@ socketio = SocketIO(app)
 # Create Flask-Login instance
 login.init_app(app)
 login.login_view = 'login'
+
+# Initialize Flask-CkEditor instance
+ckeditor = CKEditor(app)
 
 # Register Routes / Import Blueprints
 import homepage

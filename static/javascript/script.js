@@ -55,7 +55,7 @@ $(document).ready(function () {
             "overflow": "inherit"
         })
     });
-
+            
     let projDescs =  [
         {
             // Weather site
@@ -95,7 +95,6 @@ $(document).ready(function () {
             "alt": `Old_Portfolio`,
             'name': `Old Portfolio`
         },
-        
         {
             // DOM adventure game
             "desc": `An adventure game entrirely created using vanilla JavaScript 
@@ -231,4 +230,9 @@ $(document).ready(function () {
         }, 10000)
     }
     initializeCarousel()
+
+    $(".blog-submit").click(function() {
+        let form = $(".blog-form")
+        alert(form[0])
+    })
 });
