@@ -31,9 +31,8 @@
 }
 .corner-top-right {
     @extend %corner-piece;
-    transform: rotate(90deg);
     right: 0;
-    top: 0;
+    top: -25px;
 }
 .corner-bottom-left {
     @extend %corner-piece;
@@ -43,9 +42,9 @@
 }
 .corner-bottom-right {
     @extend %corner-piece;
-    transform: rotate(180deg);
-    bottom: -20px;
-    right: 0;
+    bottom: -30px;
+    right: 0px;
+    overflow: none;
 }
 
 /*----------------------------------------------------------------*/

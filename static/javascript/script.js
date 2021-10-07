@@ -20,9 +20,9 @@ $(document).ready(function () {
             "display": "inherit",
             "top": $(document).scrollTop() + 10
         })
-        $("body").css({
-            "overflow": "hidden"
-        })
+        // $("body").css({
+        //     "overflow": "hidden"
+        // })
         $("#adobe-dc-view").css({
             "display": "inherit",
             "opacity": "100%",
@@ -38,9 +38,9 @@ $(document).ready(function () {
         $("#adobe-dc-view").css({
             "display": "none",
         })
-        $("body").css({
-            "overflow": "inherit"
-        })
+        // $("body").css({
+        //     "overflow": "inherit"
+        // })
     });
     // If the gray background is clicked, close the resume
     $("#gray-bg").click(function () {
@@ -51,9 +51,9 @@ $(document).ready(function () {
         $("#adobe-dc-view").css({
             "display": "none",
         })
-        $("body").css({
-            "overflow": "inherit"
-        })
+        // $("body").css({
+        //     "overflow": "inherit"
+        // })
     });
             
     let projDescs =  [
