@@ -1,7 +1,6 @@
 /*----------------------------------------------------------------*/
 /* Homepage */
 main section {
-  z-index: -2;
   position: relative;
 }
 main section .loginform {
