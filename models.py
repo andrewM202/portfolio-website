@@ -15,7 +15,10 @@ class Quickchat(db.Document):
 class Article(db.Document):
     """ Articles for blog """
     title = db.StringField(required=True)
-    date = db.DateField()
+    content = db.StringField(required=True)
+    coverimage = db.StringField(required=True)
+    articledesc = db.StringField(required=True)
+    date = db.DateField(required=True)
 
 class User(db.Document):
     """ Login Information """

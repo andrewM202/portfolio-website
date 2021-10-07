@@ -213,11 +213,32 @@ body > header h1 {
   margin-right: 25px;
 }
 
+/* Blog Editor */
 .blog-form {
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin: 100px 0;
+}
+.blog-form div.mb-3 {
+  width: 1000px;
+  max-width: calc(100vw - 24px);
+  margin: 10px 0;
+}
+.blog-form div.mb-3 input {
+  width: 100%;
+}
+.blog-form div.mb-3 label {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  background-color: none !important;
+  padding: 0;
+  margin: 0;
+}
+.blog-form div.mb-3 .file-upload {
+  width: 1000px !important;
 }
 .blog-form #cke_ckeditor {
   width: 1000px;
@@ -226,14 +247,43 @@ body > header h1 {
 .blog-form .cke_contents {
   min-height: 500px;
 }
-.blog-form input {
-  width: 1000px;
-  max-width: calc(100vw - 24px);
-  margin: 10px 0;
-}
 
 address {
   margin: 0;
+}
+
+/* Blog page */
+section.article-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 0px 0px 0px;
+  grid-template-rows: 12px 12px 12px;
+  grid-gap: 50px 50px;
+  padding: 50px 0;
+}
+section.article-container div.article {
+  background: #fff3f3;
+  border: 3px solid gray;
+  width: 500px;
+  height: 500px;
+  max-width: 95vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+section.article-container div.article h3 {
+  width: 100%;
+  font-size: 2.2rem;
+  text-align: center;
+}
+section.article-container div.article figure {
+  width: 100%;
+  height: 50%;
+}
+section.article-container div.article figure img {
+  width: 100%;
+  height: 100%;
 }
 
 section.project-select {

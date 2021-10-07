@@ -28,13 +28,28 @@
         <li class="nav-item nav-item-sec">
           <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
         </li>
+        {% if current_user.is_authenticated %}
+        <li class="nav-item nav-item-sec">
+          <a class="nav-link active text-white" aria-current="page" href="/blog-editor">Blog Editor</a>
+        </li>
+        <li class="nav-item nav-item-sec">
+          <a class="nav-link active text-white" aria-current="page" href="/login">Login</a>
+        </li>
+        {% endif %}
       </ul>
     </div>
   </div>
 </nav>
 <main>
-    <section class="vw-100 h-auto minh-1000 d-flex justify-content-center align-items-center flex-wrap container-fluid bg-linear-fade jumbo-container">
-
+    <section class="article-container vw-100 h-auto minh-800 d-flex justify-content-center align-items-center flex-wrap container-fluid bg-linear-fade jumbo-container">
+      {% for article in articles %}
+      <div class="article">
+        <header><h3>{{ article.title }}</h3></header>
+        <p>{{ article.articledesc }}</p>
+        <time>Created: {{ article.date }}</time>
+        <figure><img src="{{ url_for('static', filename='blog/' + article.coverimage) }}"><figure>
+      </div>
+      {% endfor %}
     </section>
 </main>
 <footer class="vh-18 minh-500 vw-100 d-flex flex-column align-items-center text-white dark blue-bd-top h-auto">

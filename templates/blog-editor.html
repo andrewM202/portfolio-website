@@ -46,10 +46,29 @@
 </nav>
 <main>
     <section class="vw-100 h-auto minh-800 d-flex justify-content-center align-items-center flex-wrap container-fluid bg-linear-fade jumbo-container">
-      <form class="blog-form" action=/process-article method="POST">
+      <form class="blog-form" enctype="multipart/form-data" action=/process-article method="POST">
+        <div class="mb-3">
+        <label>Write Article</label>
         {{ ckeditor.create() }}
-        <input type="text" placeholder="Article Title" name="title">
-        <input type="submit">
+        </div>
+        <div class="mb-3">
+          <label for="cover-image text-center">Upload Article Instead</label>
+          <input type="file" class="form-control" id="cover-image" name="uploaded-article">
+        <div class="mb-3">
+          <label for="article-title" class="form-label">Article Title</label>
+          <input type="text" class="form-control" id="article-title" aria-describedby="articleTitle" placeholder="Article Title..." name="title">
+        </div>
+        <div class="mb-3">
+          <label for="article-desc"  class="form-label">Article Description</label>
+          <input type="text" class="form-control" id="article-desc" placeholder="Article Description..." name="description">
+        </div>
+        <div class="mb-3">
+          <label for="cover-image">Article Cover Image</label>
+          <input type="file" class="form-control" id="cover-image" name="cover-image">
+        </div>
+        <div class="mb-3">
+          <button type="submit" class="blog-submit form-control btn btn-primary">Submit</button>
+        </div>
       </form>
     </section>
 </main>
