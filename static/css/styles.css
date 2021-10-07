@@ -287,6 +287,8 @@ section.article-container div.article p {
   max-height: 20%;
   min-height: 20%;
   font-size: 1.5rem;
+  text-overflow: none;
+  word-wrap: break-word;
 }
 section.article-container div.article time {
   text-align: center;

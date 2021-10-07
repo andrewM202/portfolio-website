@@ -38,7 +38,7 @@ def processArticle():
     if current_user.is_authenticated:
         if request.method == 'POST':
             articleContent = request.form['ckeditor']
-            articleTitle = request.form['title']
+            articleTitle = request.form['title'].title()
             articleDesciption = request.form['description']
 
             file = request.files['cover-image']

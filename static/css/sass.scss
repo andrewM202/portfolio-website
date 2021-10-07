@@ -167,6 +167,8 @@ section.article-container {
             max-height: 20%;
             min-height: 20%;
             font-size: 1.5rem;
+            text-overflow: none;
+            word-wrap: break-word;
         }
         time {
             text-align: center;
