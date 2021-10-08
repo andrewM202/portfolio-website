@@ -732,6 +732,7 @@ a.navbar-brand:hover {
   }
 
   .mini-jumbotron {
+    height: auto;
     width: 65vw;
     margin-left: 0;
   }
