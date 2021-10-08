@@ -97,28 +97,30 @@
 <main>
     <!-- Section for jumbotron -->
     <section class="vw-100 h-auto minh-1000 d-flex justify-content-center align-items-center flex-wrap container-fluid bg-linear-fade jumbo-container">
+      <img class="corner-top-left" src="{{ url_for('static', filename='images/corner-left.svg') }}">
+      <img class="corner-top-right" src="{{ url_for('static', filename='images/corner-top-right.svg') }}">
         <div class="jumbotron h-auto minh-800">
           <h1 class="display-4 text-center">Hello!</h1>
           <p class="lead">I am a 19 year old college student majoring in Computer Software Engineering Technology at Thaddeus Stevens College of Technology. Soon to finish my Associates, I will then be targeting my Bachelors degree!
           </p>
-          <p class="lead">I have experience working as a technical support consultant fixing bugs in software with SQL, tutoring students in mathematics, and tutoring software engineering at Thaddeus Stevens.
+          <p class="lead">I have experience working as a technical support consultant fixing bugs in software with SQL, and tutoring students in Software Engineering and Mathematics.
           </p>
           <hr class="my-5">
-          <p class="lead"> I love self-studying in my free time, hiking, reading books, and hanging out with friends, with the occasional outdoor activity or video game.
+          <p class="lead">Coding, learning, and collaboration with other developers make up my free time! I am one to never stop learning the newest technologies and techniques. 
           </p>
-          <p class="lead">The most exhilerating feeling is picking up a new language or technology, and automating my workflow that much quicker!
+          <p class="lead">The most exhilerating feeling is picking up a new language or technology, automating my workflow, and immersing myself in the process!
           </p>
         </div>
         <div>
             <div class="mini-jumbotron">
                 <!-- to display contents of website -->
                 <h3 class="display-f text-center">This Portfolio</h3>
-                <p class="lead">Built during the summer of 2021, using multiple languages, plugins, and libraries</p>
+                <p class="lead">Built during the summer of 2021, using multiple new languages, plugins, and libraries I have not used before!</p>
             </div>
             <div class="mini-jumbotron">
                 <!-- to display contents of website -->
-                <h3 class="display-f text-center">About this Website</h3>
-                <p class="lead"></p>
+                <h3 class="display-f text-center">Passion</h3>
+                <p class="lead">Need someone passionate with a track record of getting what needs done done? Well, look no further!</p>
             </div>
         </div>
     </section>
@@ -127,26 +129,28 @@
         <div class="card box">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title text-center">Languages</h5>
-            <p class="card-text blue-bd-bottom">I have used a variety of languages, including HTML, CSS, JavaScript, Python, PostgreSQL, MSSQL, and limited amounts of Java and XML.</p>
+            <p class="card-text blue-bd-bottom">HTML, CSS, JavaScript, Python, PostgreSQL, MSSQL, MongoDB, PHP, and limited amounts of Java and XML.</p>
             <!--<a href="#" class="btn btn-primary align-self-center">Go somewhere</a>-->
           </div>
         </div>
        <div class="card box">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title text-center">Frameworks - Libraries</h5>
-            <p class="card-text blue-bd-bottom">I have used Flask, Bootstrap, jQuery, Dart Sass, and WebSocket in various projects.</p>
+            <p class="card-text blue-bd-bottom">Flask, Laravel, jQuery, Bootstrap, React, Dart Sass, WebSocket, Emails, PDF Generation, Web Scraping.</p>
             <!--<a href="#" class="btn btn-primary align-self-center">Go somewhere</a>-->
           </div>
         </div>
         <div class="card box">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title text-center">Developer Tools</h5>
-            <p class="card-text blue-bd-bottom">Through all of my projects, I use Source control with Git, along with various minifiers and linters.</p>
+            <p class="card-text blue-bd-bottom">Git, GitHub, Jira, Zendesk, Heroku, GitKraken, Docker, Kubernetes, CI/CD, Agile, Waterfall. I've used it all!</p>
             <!--<a href="#" class="btn btn-primary align-self-center">Go somewhere</a>-->
           </div>
         </div>        
     </section>
     <section id="projects" class="minh-750 h-auto vw-100 light d-flex justify-content-center align-items-center flex-wrap bg-linear-fade blue-bd-top">
+      <img class="corner-bottom-left" src="{{ url_for('static', filename='images/corner-left.svg') }}">
+      <img class="corner-bottom-right" src="{{ url_for('static', filename='images/corner-bottom-right.svg') }}">
         <!-- Div to hold carousel -->
         <div class="carousel-container d-flex flex-column align-items-center">
             <h4 class="text-center">Project Display</h4>
@@ -181,7 +185,7 @@
     </section>
     <address id="email" class="minh-600 vw-100 light d-flex flex-column justify-content-center align-items-center bd-black-top">
         <h4>Contact Me</h4>
-        <p class="text-center">Want to connect, or just send me an interesting message? Send me an email below, or add me on <a href="https://www.linkedin.com/in/andrew-matt/" target="_blank" class="hvr-grow">LinkedIn</a>!</p>
+        <p class="text-center">Want to connect, or just send me an interesting message? Send me an <a href="mailto:andrewm1246@gmail.com">email</a> below, or add me on <a href="https://www.linkedin.com/in/andrew-matt/" target="_blank" class="hvr-grow">LinkedIn</a>!</p>
         {% if mail_error %}
             <p>Error sending email: {{ mail_error }}</p>
         {% endif %}
@@ -226,6 +230,6 @@
             <li>Flask Security</li>
         </ul>
     </div>
-    <h5 class="text-center">Contact me at: <a href="mailto:andrewm1246@gmail.com">andrewm1246@gmail.com</a></h5>
+    <h5 class="text-center">Copyright 2021 @ Andrew Matt</h5>
 </footer>
 {% endblock %}
