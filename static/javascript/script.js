@@ -243,8 +243,4 @@ $(document).ready(function () {
     }
     initializeCarousel()
 
-    $(".blog-submit").click(function() {
-        let form = $(".blog-form")
-        alert(form[0])
-    })
 });
