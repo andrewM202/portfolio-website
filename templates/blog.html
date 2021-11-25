@@ -42,33 +42,41 @@
 </nav>
 <main>
     <section class="article-container vw-100 h-auto minh-800 d-flex justify-content-center align-items-center flex-wrap container-fluid bg-linear-fade jumbo-container">
+      <img class="corner-top-left" src="{{ url_for('static', filename='images/corner-left.svg') }}">
+      <img class="corner-top-right" src="{{ url_for('static', filename='images/corner-top-right.svg') }}">
+      <img class="corner-top-left" src="{{ url_for('static', filename='images/corner-left.svg') }}">
+      <img class="corner-top-right" src="{{ url_for('static', filename='images/corner-top-right.svg') }}">
       {% for article in articles %}
-      <div class="article">
-        <header><h3>{{ article.title }}</h3></header>
-        <time>{{ article.formatted_date }}</time>
-        <p>{{ article.articledesc }}</p>
-        <figure><img src="{{ url_for('static', filename='blog/' + article.coverimage) }}"></figure>
-      </div>
+      <a href="/blog/article/{{ article.id }}">
+        <div class="article" id="{{ article.id }}">
+          <header><h3 style="overflow-y: hidden">{{ article.title }}</h3></header>
+          <time>{{ article.formatted_date }}</time>
+          <p>{{ article.articledesc }}</p>
+          <figure><img src="{{ url_for('static', filename='blog/' + article.coverimage) }}"></figure>
+        </div>
+      </a>
       {% endfor %}
     </section>
 </main>
-<footer class="vh-18 minh-500 vw-100 d-flex flex-column align-items-center text-white dark blue-bd-top h-auto">
-    <div class="d-flex flex-row flex-wrap justify-content-center align-items-center vw-100" style="margin-bottom: 50px; height: 200px; margin-top: 50px;">
-        <h4>Various languages and frameworks are used in this portfolio</h4>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>PostgreSQL</li>
-            <li>jQuery</li>
-            <li>Bootstrap</li>
-            <li>Dart Sass</li>
-            <li>Flask</li>
-            <li>Websocket</li>
-        </ul>
-    </div>
-    <h5 class="text-center">Contact me at: <a href="mailto:andrewm1246@gmail.com">andrewm1246@gmail.com</a></h5>
+<footer class="vh-18 minh-500 vw-100 d-flex flex-column justify-content-center align-items-center text-white dark blue-bd-top h-auto">
+  <div class="d-flex flex-row flex-wrap justify-content-center align-items-center vw-100" style="margin-bottom: 50px; height: 200px; margin-top: 50px;">
+      <h4>Various languages and tools are used in this portfolio</h4>
+      <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Sitemap</li>
+          <li>Python</li>
+          <li>MongoDB</li>
+          <li>jQuery</li>
+          <li>Bootstrap</li>
+          <li>Dart SASS</li>
+          <li>Flask</li>
+          <li>Websocket</li>
+          <li>Hover.css</li>
+          <li>Flask Security</li>
+      </ul>
+  </div>
+  <h5 class="text-center">Copyright 2021 @ Andrew Matt</h5>
 </footer>
 {% endblock %}
 

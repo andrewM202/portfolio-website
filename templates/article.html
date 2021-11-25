@@ -10,16 +10,20 @@
     <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
     <!-- stylesheet link -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- adobe js -->
+    <script src="{{ url_for('static', filename='javascript/adobe.js') }}"></script>
+    <script>
+      let isArticle = true;
+      let url = "{{ url_for('static', filename='blog/') }}" + "{{ article.uploaded_content }}";
+      let adobeId = "{{ adobe_id }}";
+    </script>
      <!-- Favicon -->
      <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
-     <!-- Flask-CKEditor -->
-     {{ ckeditor.load(pkg_type="full-all") }}
-     <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
 {% endblock %}
 
 {% block body %}
 <header class="vw-100 vh-18 minh-183 d-flex justify-content-center align-items-center blue-bd-top">
-    <h1 class="fade-animation">Blog Editor</h1>
+    <h1 class="fade-animation" style="padding: 0 100px;">{{ article.title }}</h1>
 </header>
 <nav class="navbar navbar-expand-lg navbar-dark dark blue-bd-bottom">
   <div class="container-fluid">
@@ -32,44 +36,48 @@
           <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item nav-item-sec">
-          <a class="nav-link text-white" href="/blog">Blog</a>
+            <a class="nav-link active text-white" aria-current="page" href="/blog">Blog</a>
+          </li>
+        {% if current_user.is_authenticated %}
+        <li class="nav-item nav-item-sec">
+          <a class="nav-link active text-white" aria-current="page" href="/blog-editor">Blog Editor</a>
         </li>
         <li class="nav-item nav-item-sec">
-          <a class="nav-link text-white" href="/resume-upload">Resume Upload</a>
+          <a class="nav-link active text-white" aria-current="page" href="/login">Login</a>
         </li>
-        <li class="nav-item nav-item-sec">
-          <a class="nav-link text-white" href="/login">Login</a>
-        </li>
+        {% endif %}
       </ul>
     </div>
   </div>
 </nav>
-<main>
-    <section class="vw-100 h-auto minh-800 d-flex justify-content-center align-items-center flex-wrap container-fluid bg-linear-fade jumbo-container">
-      <form class="blog-form" enctype="multipart/form-data" action=/process-article method="POST">
-        <div class="mb-3">
-        <label>Write Article</label>
-        {{ ckeditor.create() }}
+<main class="h-auto">
+    <section class="article-container vw-100 h-auto minh-800 d-flex justify-content-center align-items-center flex-wrap container-fluid bg-linear-fade jumbo-container">
+      <img class="corner-top-left" src="{{ url_for('static', filename='images/corner-left.svg') }}">
+      <img class="corner-top-right" src="{{ url_for('static', filename='images/corner-top-right.svg') }}">
+      <img class="corner-top-left" src="{{ url_for('static', filename='images/corner-left.svg') }}">
+      <img class="corner-top-right" src="{{ url_for('static', filename='images/corner-top-right.svg') }}">
+      {% if not article.uploaded_content %}
+        <div class="jumbotron h-auto minh-800">
+            <p class="lead text-center">{{ article.formatted_date }}</p>
+            {{ article.content | safe }}
         </div>
-        <div class="mb-3">
-          <label for="cover-image text-center">Upload Article Instead</label>
-          <input type="file" class="form-control" id="cover-image" name="uploaded-article">
-        <div class="mb-3">
-          <label for="article-title" class="form-label">Article Title (Max Length: 23)</label>
-          <input type="text" class="form-control" id="article-title" aria-describedby="articleTitle" placeholder="Article Title..." name="title" maxlength=23>
+      {% else %}
+        <div class="jumbotron minh-800 flex justify-content-center" style="min-width: 80vw;">
+            <p class="lead text-center">{{ article.formatted_date }}</p>
+            <i class="fas fa-times" id="adobe-close" style="display: none;"></i>
+            <div id="gray-bg" style="display: none;"></div>
+            <div id="adobe-dc-view" class="adob" style="margin-left: 0; position: inherit !important; min-width: 75vw !important; height: 100%; max-width: 100%;"></div>
+            <script>
+                $(document).ready(function() {
+                    $("div.jumbotron").height($("div.jumbotron").height() + $("#adobe-dc-view").height());
+                    setInterval(function() {
+                        $("div.jumbotron").height($("#adobe-dc-view").height() + $("p.lead").height() + 50);
+                    }, 500)
+                })
+            </script>
+            <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
         </div>
-        <div class="mb-3">
-          <label for="article-desc"  class="form-label">Article Description</label>
-          <input type="text" class="form-control" id="article-desc" placeholder="Article Description..." name="description">
-        </div>
-        <div class="mb-3">
-          <label for="cover-image">Article Cover Image</label>
-          <input type="file" class="form-control" id="cover-image" name="cover-image">
-        </div>
-        <div class="mb-3">
-          <button type="submit" class="blog-submit form-control btn btn-primary">Submit</button>
-        </div>
-      </form>
+      {% endif %}
     </section>
 </main>
 <footer class="vh-18 minh-500 vw-100 d-flex flex-column align-items-center text-white dark blue-bd-top h-auto">
@@ -91,4 +99,5 @@
     <h5 class="text-center">Contact me at: <a href="mailto:andrewm1246@gmail.com">andrewm1246@gmail.com</a></h5>
 </footer>
 {% endblock %}
+
 
