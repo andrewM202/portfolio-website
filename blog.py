@@ -40,7 +40,9 @@ def seeArticles():
 def seeArticle(id):
     """ Returns a single article """
     article = Article.objects(id=str(id))[0]
-    return render_template("article.html", article=article)
+    # get adobe API key
+    adobe_id = os.environ.get('ADOBE_ID')
+    return render_template("article.html", article=article, adobe_id=adobe_id)
 
 
 @bp.route("/process-article", methods=['POST'])
@@ -50,7 +52,26 @@ def processArticle():
         if request.method == 'POST':
             articleContent = request.form['ckeditor']
             articleTitle = request.form['title'].title()
-            articleDesciption = request.form['description']
+            articleDesciption = request.form['description'] 
+
+            article_pdf_filename = ""
+            if request.files['uploaded-article'] and (articleContent is None or articleContent == ""):
+                article_pdf = request.files['uploaded-article']
+                if article_pdf and allowed_file(article_pdf.filename):
+                    # Extension of file
+                    extension = article_pdf.filename.rsplit('.', 1)[1].lower()
+                    # give the file a random name
+                    letters = string.ascii_letters
+                    digits = string.digits
+                    article_pdf_filename = ''.join(random.choice(letters + digits) for i in range(20)) + "." + extension
+                    article_pdf_filename = secure_filename(article_pdf_filename)
+                    # save file to specified directory
+                    article_pdf.save(os.path.join(app.config['BLOG_FOLDER'], article_pdf_filename))
+                else:
+                    return "Not allowed file type"
+            else:
+                return "Please only return an uploaded article or use the blog editor"
+
 
             file = request.files['cover-image']
             if file and allowed_file(file.filename):
@@ -69,6 +90,7 @@ def processArticle():
             data = Article(
                 title = articleTitle,
                 content = articleContent,
+                uploaded_content = article_pdf_filename,
                 coverimage = filename, # The name of the image
                 articledesc = articleDesciption,
                 date = date.today().strftime("%b %d, %Y"),

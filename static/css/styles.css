@@ -308,7 +308,7 @@ section.article-container div.article figure img {
 nav {
   position: sticky !important;
   top: 0;
-  z-index: 2;
+  z-index: 15;
 }
 nav .nav-item {
   font-size: 1.3rem;
@@ -337,8 +337,8 @@ nav .offcanvas-body > h3 {
   font-size: 1.3rem;
   padding: 10px 0;
   border-radius: 5px;
-  background-color: #D4ECDD;
-  border: 1px solid #F3F1F5;
+  background-color: #d4ecdd;
+  border: 1px solid #f3f1f5;
 }
 nav .offcanvas-body div {
   height: 70%;
@@ -346,14 +346,14 @@ nav .offcanvas-body div {
   overflow-y: auto;
 }
 nav .offcanvas-body div .message {
-  border: 3px solid #F3F1F5;
+  border: 3px solid #f3f1f5;
   width: 100%;
   min-height: 35px;
   height: auto;
   border-radius: 8px;
   margin: 15px 0;
   word-break: break-word;
-  background-color: #D7E9F7;
+  background-color: #d7e9f7;
 }
 nav .offcanvas-body div .message p {
   padding: 0 10px 0px 10px;

@@ -16,6 +16,7 @@ class Article(db.Document):
     """ Articles for blog """
     title = db.StringField(required=True)
     content = db.StringField(required=True)
+    uploaded_content = db.StringField()
     coverimage = db.StringField(required=True)
     articledesc = db.StringField(required=True)
     date = db.DateField(required=True)
