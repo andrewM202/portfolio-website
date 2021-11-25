@@ -69,9 +69,6 @@ def processArticle():
                     article_pdf.save(os.path.join(app.config['BLOG_FOLDER'], article_pdf_filename))
                 else:
                     return "Not allowed file type"
-            else:
-                return "Please only return an uploaded article or use the blog editor"
-
 
             file = request.files['cover-image']
             if file and allowed_file(file.filename):
