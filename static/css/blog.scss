@@ -9,10 +9,11 @@ section.article-container {
   grid-gap: 35px 35px;
   padding: 50px 0;
   div.article {
-    background: #fffffff7;
-    border: 1px solid rgb(30, 194, 230);
+    // background: #fffffff7;
+    background: rgba(233, 236, 239, 0.35);
+    // border: 1px solid rgb(30, 194, 230);
     border-radius: 5px;
-    box-shadow: 7px 7px rgba(0, 0, 0, 0.075) !important;
+    box-shadow: 7px 7px rgba(223, 198, 198, 0.075) !important;
     width: 500px;
     height: 400px;
     max-width: 95vw;
@@ -27,17 +28,21 @@ section.article-container {
       h3 {
         height: 100%;
         width: 100%;
-        font-size: 2.2rem;
+        font-size: 2rem;
         text-align: center;
+        overflow: hidden;
       }
     }
     p {
       max-height: 20%;
       min-height: 20%;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       text-overflow: none;
       word-wrap: break-word;
       padding: 0 10px;
+      // Makes it so partial lines do not show
+      -webkit-column-width: 500px; //You can't use 100%
+      column-width: 500px;
     }
     time {
       text-align: center;

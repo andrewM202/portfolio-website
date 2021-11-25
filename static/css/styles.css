@@ -162,10 +162,9 @@ section.article-container {
   padding: 50px 0;
 }
 section.article-container div.article {
-  background: #fffffff7;
-  border: 1px solid #1ec2e6;
+  background: rgba(233, 236, 239, 0.35);
   border-radius: 5px;
-  box-shadow: 7px 7px rgba(0, 0, 0, 0.075) !important;
+  box-shadow: 7px 7px rgba(223, 198, 198, 0.075) !important;
   width: 500px;
   height: 400px;
   max-width: 95vw;
@@ -182,16 +181,19 @@ section.article-container div.article header {
 section.article-container div.article header h3 {
   height: 100%;
   width: 100%;
-  font-size: 2.2rem;
+  font-size: 2rem;
   text-align: center;
+  overflow: hidden;
 }
 section.article-container div.article p {
   max-height: 20%;
   min-height: 20%;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-overflow: none;
   word-wrap: break-word;
   padding: 0 10px;
+  -webkit-column-width: 500px;
+  column-width: 500px;
 }
 section.article-container div.article time {
   text-align: center;
