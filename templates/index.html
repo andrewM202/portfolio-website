@@ -32,7 +32,7 @@
 
 {% block body %}
 <i class="fas fa-times" id="adobe-close" style="display: none;"></i>
-<div id="gray-bg" style="display: none;"></div>
+<div id="gray-bg" style="display: none; z-index: 99;"></div>
 <div id="adobe-dc-view" style="display: none; z-index: 100;"></div>
 <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
 <header class="vw-100 vh-18 minh-183 d-flex justify-content-center align-items-center blue-bd-top">
@@ -130,21 +130,18 @@
           <div class="card-body d-flex flex-column">
             <h5 class="card-title text-center">Languages</h5>
             <p class="card-text blue-bd-bottom">HTML, CSS, JavaScript, Python, PostgreSQL, MSSQL, MongoDB, PHP, and limited amounts of Java and XML.</p>
-            <!--<a href="#" class="btn btn-primary align-self-center">Go somewhere</a>-->
           </div>
         </div>
        <div class="card box">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title text-center">Frameworks - Libraries</h5>
             <p class="card-text blue-bd-bottom">Flask, Laravel, jQuery, Bootstrap, React, Dart Sass, WebSocket, Emails, PDF Generation, Web Scraping.</p>
-            <!--<a href="#" class="btn btn-primary align-self-center">Go somewhere</a>-->
           </div>
         </div>
         <div class="card box">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title text-center">Developer Tools</h5>
             <p class="card-text blue-bd-bottom">Git, GitHub, Jira, Zendesk, Heroku, GitKraken, Docker, Kubernetes, CI/CD, Agile, Waterfall. I've used it all!</p>
-            <!--<a href="#" class="btn btn-primary align-self-center">Go somewhere</a>-->
           </div>
         </div>        
     </section>
