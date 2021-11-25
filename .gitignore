@@ -37,3 +37,4 @@ migrations/
 .gitignore
 .vscode/
 static/blog/*
+!static/blog
