@@ -51,11 +51,28 @@
   </div>
 </nav>
 <main class="h-auto">
-    <section class="article-container vw-100 h-auto minh-800 d-flex justify-content-center align-items-center flex-wrap container-fluid bg-linear-fade jumbo-container">
+    <section class="article-container vw-100 h-auto minh-800 d-flex flex-column justify-content-center align-items-center flex-wrap container-fluid bg-linear-fade jumbo-container">
       <img class="corner-top-left" src="{{ url_for('static', filename='images/corner-left.svg') }}">
       <img class="corner-top-right" src="{{ url_for('static', filename='images/corner-top-right.svg') }}">
       <img class="corner-top-left" src="{{ url_for('static', filename='images/corner-left.svg') }}">
       <img class="corner-top-right" src="{{ url_for('static', filename='images/corner-top-right.svg') }}">
+      {% if current_user.is_authenticated %}
+        <form id="article-form" action="/blog/delete-article/" method="POST">
+            <input type="button" class="btn btn-primary" placeholder="Delete Article" value="Delete Article" style="padding: 15px;" onclick="confirm_delete()">
+            <input type="hidden" value="{{ article.id }}" name="article-id">
+        </form>
+        <script>
+            const confirm_delete = () => {
+                let response = prompt('Are you sure you want to delete this article? Y or N')
+                if (response === 'Y') {
+                    $("#article-form").submit()
+                    console.log('Deleted')
+                } else {
+                    event.preventDefault()
+                }
+            };
+        </script>
+      {% endif %}
       {% if not article.uploaded_content %}
         <div class="jumbotron h-auto minh-800">
             <p class="lead text-center">{{ article.formatted_date }}</p>
