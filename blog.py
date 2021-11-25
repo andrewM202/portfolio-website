@@ -1,7 +1,7 @@
 from flask import Blueprint, request, Flask, render_template, redirect, jsonify 
 from flask_login import current_user
 from models import Quickchat, Article, db
-from datetime import date
+from datetime import date, datetime
 from resume import allowed_file
 from werkzeug.utils import secure_filename
 import string, random, os
@@ -13,6 +13,10 @@ bp = Blueprint("blog", __name__)
 def blogroute():
     """ Route for blog """
     articles = Article.objects()
+    # print(dir(articles))
+    # print(articles[0].date)
+    # articles[0].date = datetime.strptime(str(articles[0].date), "%Y-%m-%d").strftime("%b %d, %Y")
+    # print(datetime.strptime(str(articles[0].date), "%Y-%m-%d").strftime("%b %d, %Y"))
     return render_template("blog.html", articles=articles)
 
 @bp.route("/blog-editor")
@@ -60,7 +64,8 @@ def processArticle():
                 content = articleContent,
                 coverimage = filename, # The name of the image
                 articledesc = articleDesciption,
-                date = date.today().strftime("%b %d, %Y")
+                date = date.today().strftime("%b %d, %Y"),
+                formatted_date = str(date.today().strftime("%b %d, %Y"))
             )
             data.save()
 

@@ -45,7 +45,7 @@
       {% for article in articles %}
       <div class="article">
         <header><h3>{{ article.title }}</h3></header>
-        <time>Created: {{ article.date }}</time>
+        <time>{{ article.formatted_date }}</time>
         <p>{{ article.articledesc }}</p>
         <figure><img src="{{ url_for('static', filename='blog/' + article.coverimage) }}"></figure>
       </div>

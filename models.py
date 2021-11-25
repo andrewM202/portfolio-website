@@ -19,6 +19,7 @@ class Article(db.Document):
     coverimage = db.StringField(required=True)
     articledesc = db.StringField(required=True)
     date = db.DateField(required=True)
+    formatted_date = db.StringField(required=True)
 
 class User(db.Document):
     """ Login Information """
