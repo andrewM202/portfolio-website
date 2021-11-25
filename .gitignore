@@ -36,4 +36,4 @@ migrations/
 .pdf
 .gitignore
 .vscode/
-static/blog/
+static/blog/*
