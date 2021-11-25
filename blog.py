@@ -27,9 +27,17 @@ def blogEdit():
     else: 
         return redirect('/')
 
-@bp.route("/delete-article")
+@bp.route("/blog/delete-article/", methods=["POST"])
 def deleteArticle():
-    pass
+    if current_user.is_authenticated:
+        articleid = request.form['article-id']
+        # print(articleid)
+        print(request.form)
+        article = Article.objects.get(id=articleid)
+        article.delete()
+        return redirect('/blog')
+    else:
+        return redirect('/blog/')
 
 @bp.route("/articles")
 def seeArticles():
