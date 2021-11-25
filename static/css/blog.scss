@@ -17,14 +17,15 @@ section.article-container {
     // border: 1px solid rgb(30, 194, 230);
     border-radius: 5px;
     box-shadow: 7px 7px rgba(223, 198, 198, 0.075) !important;
-    width: 500px;
-    height: 400px;
+    width: 700px;
+    height: 600px;
     max-width: 95vw;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     color: black;
     cursor: pointer;
+    padding: 25px;
     header {
       height: 15%;
       width: 100%;
@@ -64,7 +65,7 @@ section.article-container {
     figure {
       margin: 0;
       width: 100%;
-      min-height: 65%;
+      min-height: 60%;
       max-height: 60%;
       img {
         width: 100%;
