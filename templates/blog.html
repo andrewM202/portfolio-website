@@ -42,17 +42,17 @@
 </nav>
 <main>
     <section class="article-container vw-100 h-auto minh-800 d-flex justify-content-center align-items-center flex-wrap container-fluid bg-linear-fade jumbo-container">
-      <img class="corner-top-left" src="{{ url_for('static', filename='images/corner-left.svg') }}">
-      <img class="corner-top-right" src="{{ url_for('static', filename='images/corner-top-right.svg') }}">
-      <img class="corner-top-left" src="{{ url_for('static', filename='images/corner-left.svg') }}">
-      <img class="corner-top-right" src="{{ url_for('static', filename='images/corner-top-right.svg') }}">
+      <img class="corner-top-left" src="{{ url_for('static', filename='images/corner-left.svg') }}" alt="image-corner">
+      <img class="corner-top-right" src="{{ url_for('static', filename='images/corner-top-right.svg') }}" alt="image-corner">
+      <img class="corner-top-left" src="{{ url_for('static', filename='images/corner-left.svg') }}" alt="image-corner">
+      <img class="corner-top-right" src="{{ url_for('static', filename='images/corner-top-right.svg') }}" alt="image-corner">
       {% for article in articles %}
       <a href="/blog/article/{{ article.id }}">
         <div class="article" id="{{ article.id }}">
           <header><h3 style="overflow-y: hidden">{{ article.title }}</h3></header>
           <time>{{ article.formatted_date }}</time>
           <p>{{ article.articledesc }}</p>
-          <figure><img src="{{ url_for('static', filename='blog/' + article.coverimage) }}"></figure>
+          <figure><img src="{{ url_for('static', filename='blog/' + article.coverimage) }}" alt="Article Cover Image"></figure>
         </div>
       </a>
       {% endfor %}
