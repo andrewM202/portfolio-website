@@ -161,6 +161,9 @@ section.article-container {
   grid-gap: 35px 35px;
   padding: 50px 0;
 }
+section.article-container a {
+  text-decoration: none;
+}
 section.article-container div.article {
   background: rgba(233, 236, 239, 0.35);
   border-radius: 5px;
@@ -175,7 +178,7 @@ section.article-container div.article {
   cursor: pointer;
 }
 section.article-container div.article header {
-  height: 10%;
+  height: 15%;
   width: 100%;
 }
 section.article-container div.article header h3 {
@@ -184,16 +187,10 @@ section.article-container div.article header h3 {
   font-size: 2rem;
   text-align: center;
   overflow: hidden;
-}
-section.article-container div.article p {
-  max-height: 20%;
-  min-height: 20%;
-  font-size: 1.3rem;
-  text-overflow: none;
-  word-wrap: break-word;
-  padding: 0 10px;
   -webkit-column-width: 500px;
   column-width: 500px;
+  text-overflow: ellipsis;
+  padding: 5px 0 0 0;
 }
 section.article-container div.article time {
   text-align: center;
@@ -203,6 +200,15 @@ section.article-container div.article time {
   height: 20%;
   width: 100%;
   padding-top: 5px;
+}
+section.article-container div.article p {
+  max-height: 15%;
+  min-height: 15%;
+  font-size: 1.3rem;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  margin-top: 10px;
+  padding: 0 20px;
 }
 section.article-container div.article figure {
   margin: 0;
@@ -621,11 +627,11 @@ footer h5 {
 }
 
 .blue-bd-top {
-  border-top: 5px solid #1EAE98;
+  border-top: 5px solid #1eae98;
 }
 
 .blue-bd-bottom {
-  border-bottom: 5px solid #1EAE98;
+  border-bottom: 5px solid #1eae98;
 }
 
 body {
@@ -637,6 +643,7 @@ body > header {
 body > header h1 {
   font-size: 3rem;
   margin-right: 25px;
+  text-align: center;
 }
 
 address {
@@ -700,11 +707,11 @@ address {
 
 /* Adobe Stuff End */
 .bg-linear-fade {
-  background: linear-gradient(180deg, #4CA1A3, #CCDAE5, #CCDAE5, #4CA1A3);
+  background: linear-gradient(180deg, #4ca1a3, #ccdae5, #ccdae5, #4ca1a3);
 }
 
 .bg-radial-fade {
-  background: radial-gradient(white 85%, #4CA1A3);
+  background: radial-gradient(white 85%, #4ca1a3);
 }
 
 .form-container div {
@@ -750,10 +757,6 @@ a.navbar-brand:hover {
   }
 }
 @media (max-width: 1000px) {
-  * {
-    font-size: 1.4rem;
-  }
-
   footer h4 {
     min-width: 60vw;
   }
@@ -784,7 +787,7 @@ a.navbar-brand:hover {
     width: 33.3333333333% !important;
   }
   section.project-select div.row-one {
-    border-bottom: 2px solid #1EAE98;
+    border-bottom: 2px solid #1eae98;
   }
 
   header {
@@ -834,10 +837,6 @@ a.navbar-brand:hover {
   }
 }
 @media (max-width: 600px) {
-  * {
-    font-size: 1.5rem;
-  }
-
   p.blue-bd-bottom {
     border-bottom: 0;
   }

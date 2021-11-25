@@ -16,7 +16,7 @@
 
 {% block body %}
 <header class="vw-100 vh-18 minh-183 d-flex justify-content-center align-items-center blue-bd-top">
-    <h1 class="fade-animation">The Blog</h1>
+    <h1 class="fade-animation" style="padding: 0 100px;">{{ article.title }}</h1>
 </header>
 <nav class="navbar navbar-expand-lg navbar-dark dark blue-bd-bottom">
   <div class="container-fluid">
@@ -46,16 +46,10 @@
       <img class="corner-top-right" src="{{ url_for('static', filename='images/corner-top-right.svg') }}">
       <img class="corner-top-left" src="{{ url_for('static', filename='images/corner-left.svg') }}">
       <img class="corner-top-right" src="{{ url_for('static', filename='images/corner-top-right.svg') }}">
-      {% for article in articles %}
-      <a href="/blog/article/{{ article.id }}">
-        <div class="article" id="{{ article.id }}">
-          <header><h3 style="overflow-y: hidden">{{ article.title }}</h3></header>
-          <time>{{ article.formatted_date }}</time>
-          <p>{{ article.articledesc }}</p>
-          <figure><img src="{{ url_for('static', filename='blog/' + article.coverimage) }}"></figure>
-        </div>
-      </a>
-      {% endfor %}
+      <div class="jumbotron h-auto minh-800">
+          <p class="lead text-center">{{ article.formatted_date }}</p>
+          {{ article.content | safe }}
+      </div>
     </section>
 </main>
 <footer class="vh-18 minh-500 vw-100 d-flex flex-column align-items-center text-white dark blue-bd-top h-auto">

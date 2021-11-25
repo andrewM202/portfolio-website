@@ -36,6 +36,13 @@ def seeArticles():
     articles = Article.objects()
     return jsonify(articles)
 
+@bp.route("/blog/article/<id>")
+def seeArticle(id):
+    """ Returns a single article """
+    article = Article.objects(id=str(id))[0]
+    return render_template("article.html", article=article)
+
+
 @bp.route("/process-article", methods=['POST'])
 def processArticle():
     """ Process a blog article's content """
