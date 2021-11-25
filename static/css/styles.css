@@ -168,14 +168,15 @@ section.article-container div.article {
   background: rgba(233, 236, 239, 0.35);
   border-radius: 5px;
   box-shadow: 7px 7px rgba(223, 198, 198, 0.075) !important;
-  width: 500px;
-  height: 400px;
+  width: 700px;
+  height: 600px;
   max-width: 95vw;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   color: black;
   cursor: pointer;
+  padding: 25px;
 }
 section.article-container div.article header {
   height: 15%;
@@ -213,7 +214,7 @@ section.article-container div.article p {
 section.article-container div.article figure {
   margin: 0;
   width: 100%;
-  min-height: 65%;
+  min-height: 60%;
   max-height: 60%;
 }
 section.article-container div.article figure img {
