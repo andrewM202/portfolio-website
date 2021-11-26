@@ -14,7 +14,7 @@
     <script src="{{ url_for('static', filename='javascript/adobe.js') }}"></script>
     <script>
       let isArticle = true;
-      let url = "{{ url_for('static', filename='blog/') }}" + "{{ article.uploaded_content }}";
+      let url = "{{ url_for('static', filename='blog/') }}" + "{{ article.uploaded_content_name }}";
       let adobeId = "{{ adobe_id }}";
     </script>
      <!-- Favicon -->
@@ -83,7 +83,7 @@
             <p class="lead text-center">{{ article.formatted_date }}</p>
             <i class="fas fa-times" id="adobe-close" style="display: none;"></i>
             <div id="gray-bg" style="display: none;"></div>
-            <div id="adobe-dc-view" class="adob" style="margin-left: 0; position: inherit !important; min-width: 75vw !important; height: 100%; max-width: 100%;"></div>
+            <div id="adobe-dc-view" class="adob" style="margin-left: 0; margin-right: 0; margin: 0 !important; padding: 0; position: inherit !important; min-width: 80vw !important; height: 100%; max-width: 100%;"></div>
             <script>
                 $(document).ready(function() {
                     $("div.jumbotron").height($("div.jumbotron").height() + $("#adobe-dc-view").height());
