@@ -1,8 +1,9 @@
 from flask import Flask
 from mongoengine import *
 from flask_login import UserMixin, LoginManager
+from os import environ
 
-db = connect(host="mongodb://127.0.0.1:27017/portfolio-website")
+db = connect(host = environ['MONGODB_HOST'])
 
 login = LoginManager()
 
