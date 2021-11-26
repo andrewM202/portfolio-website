@@ -10,8 +10,8 @@
     <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
     <!-- stylesheet link -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-     <!-- Favicon -->
-     <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
 {% endblock %}
 
 {% block body %}
@@ -52,7 +52,7 @@
           <header><h3 style="overflow-y: hidden">{{ article.title }}</h3></header>
           <time>{{ article.formatted_date }}</time>
           <p>{{ article.articledesc }}</p>
-          <figure><img src="{{ url_for('static', filename='blog/' + article.coverimage) }}" alt="Article Cover Image"></figure>
+          <figure><img src="{{ url_for('static', filename='blog/' + article.coverimage_name) }}" alt="Article Cover Image"></figure>
         </div>
       </a>
       {% endfor %}

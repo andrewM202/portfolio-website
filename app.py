@@ -3,7 +3,7 @@ from config import Config
 from flask_socketio import SocketIO
 from flask_migrate import Migrate
 from flask_mail import Mail
-from models import db, login
+from models import login
 from flask_sitemap import Sitemap
 from flask_ckeditor import CKEditor
 
@@ -14,7 +14,7 @@ app.config.from_object('config.DevelopmentConfig')
 ext = Sitemap(app=app)
 
 # initialize the mongoengine database
-db.init_app(app)
+# db.init_app(app)
 
 # Create a Flask-Mail instance
 mail = Mail(app)

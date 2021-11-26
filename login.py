@@ -1,6 +1,6 @@
 from flask import Blueprint, request, Flask, render_template, redirect, jsonify
 from flask_login import current_user, login_user, logout_user
-from models import db, User
+from models import User
 
 bp = Blueprint("login", __name__)
 

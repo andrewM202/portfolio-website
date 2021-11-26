@@ -1,6 +1,6 @@
 from flask import Blueprint, request, Flask, render_template, redirect, jsonify
 from flask_socketio import SocketIO, send, emit
-from models import Quickchat, db
+from models import Quickchat
 from flask_mongoengine import MongoEngine
 from datetime import datetime
 import os

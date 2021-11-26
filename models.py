@@ -1,31 +1,36 @@
 from flask import Flask
-from flask_mongoengine import MongoEngine
+from mongoengine import *
 from flask_login import UserMixin, LoginManager
 
-db = MongoEngine()
+db = connect(host="mongodb://127.0.0.1:27017/portfolio-website")
+
 login = LoginManager()
 
 # Initializing test class with a document
-class Quickchat(db.Document):
+class Quickchat(Document):
     """ Quickchats """
-    name = db.StringField(required=True)
-    message = db.StringField(required=True)
-    datetime = db.DateTimeField()
+    name = StringField(required=True)
+    message = StringField(required=True)
+    datetime = DateTimeField()
 
-class Article(db.Document):
+class Article(Document):
     """ Articles for blog """
-    title = db.StringField(required=True)
-    content = db.StringField(required=True)
-    uploaded_content = db.StringField()
-    coverimage = db.StringField(required=True)
-    articledesc = db.StringField(required=True)
-    date = db.DateField(required=True)
-    formatted_date = db.StringField(required=True)
+    title = StringField(required=True)
+    content = StringField(required=True)
+    # uploaded_content = db.StringField()
+    # coverimage = db.StringField(required=True)
+    uploaded_content = FileField()
+    uploaded_content_name = StringField()
+    coverimage = ImageField(required=True)
+    coverimage_name = StringField(required=True)
+    articledesc = StringField(required=True)
+    date = DateField(required=True)
+    formatted_date = StringField(required=True)
 
-class User(db.Document):
+class User(Document):
     """ Login Information """
-    username = db.StringField(required=True)
-    password = db.StringField(required=True)
+    username = StringField(required=True)
+    password = StringField(required=True)
 
     def is_active(self):
         """True, as all users are active."""
