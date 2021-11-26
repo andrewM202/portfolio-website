@@ -36,5 +36,6 @@ migrations/
 .pdf
 .gitignore
 .vscode/
-!/static/blog
+!/static/blog/text.txt
 /static/blog/*
+!/static/blog/text.txt
