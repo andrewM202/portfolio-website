@@ -39,7 +39,7 @@ class User(Document):
 
     def get_id(self):
         """Return the email address to satisfy Flask-Login's requirements."""
-        return User.objects().first()
+        return User.objects().first().to_json()
 
     def is_authenticated(self):
         """Return True if the user is authenticated."""
