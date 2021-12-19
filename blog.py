@@ -13,8 +13,8 @@ import requests
 bp = Blueprint("blog", __name__)
 
 def render_dependencies():
-    """ Initializes the images from database
-    into local storage """
+    """ Initializes the images and pdf 
+    from database into local storage """
     articles = Article.objects()
     for art in articles:
         # Save image and article PDFS to directory if it 
@@ -30,14 +30,14 @@ def render_dependencies():
                 im.save(os.path.join(app.config['BLOG_FOLDER'] + art.coverimage_name), extension.upper())
         
         # path is path to file
-        # if art.uploaded_content_name:
-        #     extension = art.uploaded_content_name.rsplit('.', 1)[1].lower()
-        #     path = os.path.join(app.config['BLOG_FOLDER'], art.uploaded_content_name)
-        #     if not os.path.isfile(path):
-        #         with open(art.uploaded_content.read()) as f:
-        #             pass
-        #             f.save(os.path.join(app.config['BLOG_FOLDER'] + art.uploaded_content_name), extension.upper())
-
+        if art.uploaded_content_name:
+            extension = art.uploaded_content_name.rsplit('.', 1)[1].lower()
+            path = os.path.join(app.config['BLOG_FOLDER'], art.uploaded_content_name)
+            if not os.path.isfile(path):
+                # with open(art.uploaded_content, 'rb') as f:
+                pdf = art.uploaded_content.read()
+                with open(os.path.join(app.config['BLOG_FOLDER'], art.uploaded_content_name), 'wb') as f:
+                    f.write(pdf)
 
 @bp.route("/blog")
 def blogroute():
@@ -108,8 +108,12 @@ def processArticle():
                     article_pdf_filename = secure_filename(article_pdf_filename)
                     # save file to specified directory
                     article_pdf.save(os.path.join(app.config['BLOG_FOLDER'], article_pdf_filename))
-                    data.uploaded_content = article_pdf
+                    # with open(article_pdf, 'rb') as f:
+                    with open(os.path.join(app.config['BLOG_FOLDER'], article_pdf_filename), 'rb') as f:
+                        data.uploaded_content.put(f, content_type='application/pdf')   
+                    # data.uploaded_content = article_pdf
                     data.uploaded_content_name = article_pdf_filename
+
                 else:
                     return "Not allowed file type"
 
