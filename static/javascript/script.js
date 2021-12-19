@@ -1,8 +1,8 @@
 $(document).ready(function () {
     // Animation for header
     // If window is bigger than 1000px, do margin animation, else only fade animation
-    if (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) >  1000) {
-        $("header h1.animation").hide().fadeIn(1500).animate({"margin-right": '+=50'}, 2500);
+    if (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) > 1000) {
+        $("header h1.animation").hide().fadeIn(1500).animate({ "margin-right": '+=50' }, 2500);
         $(".card").addClass("hvr-float")
     }
     else {
@@ -55,8 +55,19 @@ $(document).ready(function () {
         //     "overflow": "inherit"
         // })
     });
-            
-    let projDescs =  [
+
+    let projDescs = [
+        {
+            // Weather site
+            "desc": `A Christmas themed, fully functional elderly
+            care management system. Written in PHP,
+            and developed using Laravel's Breeze and Sail among two
+            other fellow developers. Tailwind CSS was used for styling.`,
+            "link": `https://care-of-yore.herokuapp.com/`,
+            'github': `https://github.com/andrewM202/care-of-yore`,
+            'alt': `Elderly_Care_Management_System`,
+            'name': `Care System`
+        },
         {
             // Weather site
             "desc": `Utilizes the PHP framework Laravel to dynamically 
@@ -129,15 +140,15 @@ $(document).ready(function () {
         }
     ]
 
-    const initializeCarousel = function() {
+    const initializeCarousel = function () {
         let carouselChildren = $(".carousel-container > figure").children("img");
 
-        const nextSlide = function() {
+        const nextSlide = function () {
             for (child of carouselChildren) {
-                if(child.className === "active") {
-                    for(let i=0; i<projDescs.length; i++) {
-                        if(projDescs[i].alt === child.alt) {
-                            if($(".active").next("img").length === 0) {
+                if (child.className === "active") {
+                    for (let i = 0; i < projDescs.length; i++) {
+                        if (projDescs[i].alt === child.alt) {
+                            if ($(".active").next("img").length === 0) {
                                 $(`[alt=${child.alt}]`).removeClass("active")
                                 $("figure").children("img:first-of-type").addClass("active")
                                 $(".project-desc").text(projDescs[0].desc);
@@ -150,13 +161,13 @@ $(document).ready(function () {
                             } else {
                                 $(".active").next("img").addClass("active")
                                 $(`[alt=${child.alt}]`).removeClass("active")
-                                $(".project-desc").text(projDescs[i+1].desc);
+                                $(".project-desc").text(projDescs[i + 1].desc);
                                 // Refresh the text and href for the project link
-                                $("#resume-link").attr("href", projDescs[i+1].link)
-                                $("#resume-link").children().text(projDescs[i+1].name + "\'s Live URL")
+                                $("#resume-link").attr("href", projDescs[i + 1].link)
+                                $("#resume-link").children().text(projDescs[i + 1].name + "\'s Live URL")
                                 // Refresh the text and href for the project github
-                                $("#resume-github").attr("href", projDescs[i+1].github)
-                                $("#resume-github").children().text(projDescs[i+1].name + "\'s Github")
+                                $("#resume-github").attr("href", projDescs[i + 1].github)
+                                $("#resume-github").children().text(projDescs[i + 1].name + "\'s Github")
                             }
                         }
                     }
@@ -166,35 +177,35 @@ $(document).ready(function () {
         }
         nextSlide()
 
-        $(".carousel-prev").click(function() {
+        $(".carousel-prev").click(function () {
             // Clear and reset interval timer
             clearInterval(intervalTimer)
             intervalTimer = setInterval(nextSlide, 12500)
-            for(let child of carouselChildren) {
-                if(child.className === "active") {
-                    for(let i=0; i<projDescs.length; i++) {
-                        if(child.alt === projDescs[i].alt) {
-                            if($(".active").prev("img").length === 0) {
+            for (let child of carouselChildren) {
+                if (child.className === "active") {
+                    for (let i = 0; i < projDescs.length; i++) {
+                        if (child.alt === projDescs[i].alt) {
+                            if ($(".active").prev("img").length === 0) {
                                 $("figure").children("img:last-of-type").addClass("active")
                                 $("figure").children(`[alt=${child.alt}]`).removeClass()
-                                $(".project-desc").text(projDescs[projDescs.length-1].desc);
+                                $(".project-desc").text(projDescs[projDescs.length - 1].desc);
                                 // Refresh the text and href for the project link
-                                $("#resume-link").attr("href", projDescs[projDescs.length-1].link)
-                                $("#resume-link").children().text(projDescs[projDescs.length-1].name + "\'s Live URL")
+                                $("#resume-link").attr("href", projDescs[projDescs.length - 1].link)
+                                $("#resume-link").children().text(projDescs[projDescs.length - 1].name + "\'s Live URL")
                                 // Refresh the text and href for the project github
-                                $("#resume-github").attr("href", projDescs[projDescs.length-1].github)
-                                $("#resume-github").children().text(projDescs[projDescs.length-1].name + "\'s Github")
+                                $("#resume-github").attr("href", projDescs[projDescs.length - 1].github)
+                                $("#resume-github").children().text(projDescs[projDescs.length - 1].name + "\'s Github")
 
                             } else {
                                 $(".active").prev().addClass('active')
                                 $("figure").children(`[alt=${child.alt}]`).removeClass()
-                                $(".project-desc").text(projDescs[i-1].desc);
+                                $(".project-desc").text(projDescs[i - 1].desc);
                                 // Refresh the text and href for the project link
-                                $("#resume-link").attr("href", projDescs[i-1].link)
-                                $("#resume-link").children().text(projDescs[i-1].name + "\'s Live Site Here")
+                                $("#resume-link").attr("href", projDescs[i - 1].link)
+                                $("#resume-link").children().text(projDescs[i - 1].name + "\'s Live Site Here")
                                 // Refresh the text and href for the project github
-                                $("#resume-github").attr("href", projDescs[i-1].github)
-                                $("#resume-github").children().text(projDescs[i-1].name + "\'s Github Here")
+                                $("#resume-github").attr("href", projDescs[i - 1].github)
+                                $("#resume-github").children().text(projDescs[i - 1].name + "\'s Github Here")
                             }
                         }
                     }
@@ -206,11 +217,11 @@ $(document).ready(function () {
             // Clear and reset interval timer
             clearInterval(intervalTimer)
             intervalTimer = setInterval(nextSlide, 12500)
-            for(let child of carouselChildren) {
-                if(child.className === "active") {
-                    for(let i=0; i<projDescs.length; i++) {
-                        if(child.alt === projDescs[i].alt) {
-                            if($(".active").next("img").length === 0) {
+            for (let child of carouselChildren) {
+                if (child.className === "active") {
+                    for (let i = 0; i < projDescs.length; i++) {
+                        if (child.alt === projDescs[i].alt) {
+                            if ($(".active").next("img").length === 0) {
                                 $("figure").children("img:first-of-type").addClass("active")
                                 $("figure").children(`[alt=${child.alt}]`).removeClass()
                                 $(".project-desc").text(projDescs[0].desc);
@@ -224,13 +235,13 @@ $(document).ready(function () {
                             } else {
                                 $(".active").next().addClass('active')
                                 $("figure").children(`[alt=${child.alt}]`).removeClass()
-                                $(".project-desc").text(projDescs[i+1].desc);
+                                $(".project-desc").text(projDescs[i + 1].desc);
                                 // Refresh the text and href for the project link
-                                $("#resume-link").attr("href", projDescs[i+1].link)
-                                $("#resume-link").children().text(projDescs[i+1].name + "\'s Live URL")
+                                $("#resume-link").attr("href", projDescs[i + 1].link)
+                                $("#resume-link").children().text(projDescs[i + 1].name + "\'s Live URL")
                                 // Refresh the text and href for the project github
-                                $("#resume-github").attr("href", projDescs[i+1].github)
-                                $("#resume-github").children().text(projDescs[i+1].name + "\'s Github")
+                                $("#resume-github").attr("href", projDescs[i + 1].github)
+                                $("#resume-github").children().text(projDescs[i + 1].name + "\'s Github")
                             }
                         }
                     }
