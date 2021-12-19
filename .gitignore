@@ -37,5 +37,3 @@ migrations/
 .gitignore
 .vscode/
 !/static/blog/text.txt
-/static/blog/*
-!/static/blog/text.txt
